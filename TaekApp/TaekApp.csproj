@@ -71,11 +71,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-<<<<<<<<< Temporary merge branch 1
 	  <MauiXaml Update="Views\ProjekterPage.xaml">
-=========
+	  </MauiXaml>
 	  <MauiXaml Update="newProject.xaml">
->>>>>>>>> Temporary merge branch 2
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
