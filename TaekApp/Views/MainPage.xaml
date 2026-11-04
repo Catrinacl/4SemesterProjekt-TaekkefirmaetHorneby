@@ -8,10 +8,10 @@
             Padding="30,0"
             Spacing="25">
             <Image
-                Source="dotnet_bot.png"
+                Source="logo.jpg"
                 HeightRequest="185"
                 Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a submarine number ten" />
+                SemanticProperties.Description="House with brand logo" />
 
             <Label
                 Text="Tækkefirmaet Horneby"
@@ -19,10 +19,16 @@
                 SemanticProperties.HeadingLevel="Level1" />
 
             <Button
-                x:Name="projektOversigt"
+                x:Name="projekterOversigt"
                 Text="Projektoversigt" 
                 SemanticProperties.Hint="Leads you to the project overview"
-                HorizontalOptions="Fill" />
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="opretProjekt"
+                Text="Opret Projekt" 
+                SemanticProperties.Hint="Leads you to page where you can create a new project"
+                HorizontalOptions="Center" />
         </VerticalStackLayout>
     </ScrollView>
 
