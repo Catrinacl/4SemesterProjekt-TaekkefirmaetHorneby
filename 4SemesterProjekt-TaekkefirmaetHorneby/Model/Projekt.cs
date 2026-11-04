@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmployeeDataAccess.Model
+namespace _4SemesterProjekt_TaekkefirmaetHorneby.Model
 {
-    internal class Projekt
+    internal interface Projekt
     {
    
 
