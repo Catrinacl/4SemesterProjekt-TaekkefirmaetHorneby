@@ -71,9 +71,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\NewProjektPage.xaml.cs">
-	    <DependentUpon>NewProjektPage.xaml</DependentUpon>
-	  </Compile>
+<<<<<<<<< Temporary merge branch 1
+	  <MauiXaml Update="Views\ProjekterPage.xaml">
+=========
+	  <MauiXaml Update="newProject.xaml">
+>>>>>>>>> Temporary merge branch 2
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>
