@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="4SemesterProjekt-TaekkefirmaetHorneby/DataAccessLayer.csproj" />
+  <Project Path="BusinessLayer/BusinessLayer.csproj" Id="aa0a5968-7d53-4777-94cb-f36d111b7924" />
+  <Project Path="ClassLibraryProjekt/ClassLibraryProjekt.csproj" Id="9fc627a8-9051-4756-8851-b54f69cb4a86" />
+  <Project Path="TaekApp/TaekApp.csproj" Id="295c3ff6-a27d-46b5-b39b-4a2ce28d49cb">
+    <Deploy Solution="Debug|*" />
+  </Project>
+</Solution>
