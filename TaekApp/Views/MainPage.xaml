@@ -21,12 +21,14 @@
             <Button
                 x:Name="projekterOversigt"
                 Text="Projektoversigt" 
+                Clicked="OnProjekterOversigtClicked"
                 SemanticProperties.Hint="Leads you to the project overview"
                 HorizontalOptions="Center" />
 
             <Button
                 x:Name="opretProjekt"
                 Text="Opret Projekt" 
+                Clicked="OnOpretProjektClicked"
                 SemanticProperties.Hint="Leads you to page where you can create a new project"
                 HorizontalOptions="Center" />
         </VerticalStackLayout>

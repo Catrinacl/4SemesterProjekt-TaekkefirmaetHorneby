@@ -1,6 +1,6 @@
 ﻿using TaekApp.Views;
 
-namespace TaekApp
+namespace TaekApp.Views
 {
     public partial class MainPage : ContentPage
     {
