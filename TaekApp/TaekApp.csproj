@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net10.0-android</TargetFrameworks>
@@ -71,9 +71,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="newProject.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
+	  <Compile Update="Views\NewProjektPage.xaml.cs">
+	    <DependentUpon>NewProjektPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>
