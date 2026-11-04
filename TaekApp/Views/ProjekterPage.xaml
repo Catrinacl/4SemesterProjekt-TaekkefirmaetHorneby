@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TaekApp.Views.ProjekterPage"
-             Title="ProjekterPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TaekApp.Views.ProjekterPage">
+
+    <Grid Padding="20"
+          RowDefinitions="Auto,*"
+          RowSpacing="15">
+
+        <Label
+            Text="Projekter"
+            FontSize="28"
+            FontAttributes="Bold" />
+
+        <CollectionView
+            x:Name="ProjekterListe"
+            Grid.Row="1">
+
+            <CollectionView.EmptyView>
+                <Label Text="Der er ingen projekter endnu." />
+            </CollectionView.EmptyView>
+
+        </CollectionView>
+
+    </Grid>
+
 </ContentPage>
