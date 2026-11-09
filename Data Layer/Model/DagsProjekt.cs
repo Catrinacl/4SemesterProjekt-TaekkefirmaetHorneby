@@ -6,6 +6,6 @@ namespace Data_Layer.Model
 {
     internal class DagsProjekt : IProjekt
     {
-        public string Adresse { get; set; }
+        public string Adress { get; set; }
     }
 }
