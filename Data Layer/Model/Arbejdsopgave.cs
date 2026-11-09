@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data_Layer.Model
+namespace DataAccess.Model
 {
-    internal interface IArbejdsopgave
+    internal class Arbejdsopgave
     {
         public String Name { get; set; }
     }
