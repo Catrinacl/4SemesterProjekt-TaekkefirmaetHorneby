@@ -6,6 +6,12 @@ namespace Data_Layer.Model
 {
     internal class DagsProjekt : IProjekt
     {
-        public string Adress { get; set; }
+        private String adress;
+        private List<IArbejdsopgave> arbejdsopgaver;
+        public DagsProjekt(String adress) 
+        {
+            this.adress = adress;
+        }
+        public string Adress { get => adress; set => this.adress = value; }
     }
 }

@@ -6,7 +6,6 @@ namespace Data_Layer.Model
 {
     internal interface IProjekt
     {
-        public String Adress { get; set; }
-
+        public string Adress {  get; set; }
     }
 }
