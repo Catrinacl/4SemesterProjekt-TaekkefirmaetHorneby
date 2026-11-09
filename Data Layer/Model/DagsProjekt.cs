@@ -12,6 +12,10 @@ namespace Data_Layer.Model
         {
             this.adress = adress;
         }
-        public string Adress { get => adress; set => this.adress = value; }
+
+        public int ProjektID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public List<IArbejdsopgave> Arbejdsopgaver { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Adress { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Status { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }
