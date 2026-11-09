@@ -5,17 +5,30 @@
     x:Class="TaekApp.Views.ProjekterPage">
 
     <Grid Padding="20"
-          RowDefinitions="Auto,*"
+          RowDefinitions="Auto,Auto,*"
           RowSpacing="15">
 
         <Label
-            Text="Projekter"
+            Grid.Row="0"
+            Text="Projektoversigt"
             FontSize="28"
             FontAttributes="Bold" />
 
+        <HorizontalStackLayout Grid.Row="1" Spacing="10">
+
+            <Button
+                Text="Projekter"
+                Clicked="OnProjekterClicked" />
+
+            <Button
+                Text="Dagsprojekter"
+                Clicked="OnDagsprojekterClicked" />
+
+        </HorizontalStackLayout>
+
         <CollectionView
             x:Name="ProjekterListe"
-            Grid.Row="1">
+            Grid.Row="2">
 
             <CollectionView.EmptyView>
                 <Label Text="Der er ingen projekter endnu." />
