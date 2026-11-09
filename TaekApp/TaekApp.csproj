@@ -71,6 +71,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj" />
+	  <ProjectReference Include="..\DTO\DTO.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Views\ProjekterPage.xaml">
 	  </MauiXaml>
 	  <MauiXaml Update="newProject.xaml">
