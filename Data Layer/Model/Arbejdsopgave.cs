@@ -6,6 +6,14 @@ namespace DataAccess.Model
 {
     internal class Arbejdsopgave
     {
+        private string name;
+        private string description;
+        private string status;
+        private int priority;
+        private DateTime startDate;
+        private DateTime endDate;
+
         public String Name { get; set; }
+
     }
 }
