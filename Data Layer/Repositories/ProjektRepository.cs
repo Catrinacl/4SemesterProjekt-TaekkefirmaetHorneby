@@ -13,5 +13,23 @@ namespace Data_Layer.Repositories
             // TODO: Tilføj den rigtige databaselogik her senere
             return null;
         }
+
+        public void GemProjekt(LangtProjekt nytProjekt)
+        {
+            using (var context = new ProjektContext())
+            {
+                context.Langeprojekter.Add(nytProjekt);
+                context.SaveChanges();
+            }
+        }
+
+        public void GemDagsProjekt(DagsProjekt dagsProjekt)
+        {
+            using (var context = new ProjektContext())
+            {
+                context.Set<DagsProjekt>().Add(dagsProjekt);
+                context.SaveChanges();
+            }
+        }
     }
 }

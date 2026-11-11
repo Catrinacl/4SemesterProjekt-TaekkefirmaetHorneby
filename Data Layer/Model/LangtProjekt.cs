@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataAccess.Model
 {
-    internal class LangtProjekt : IProjekt
+    public class LangtProjekt : IProjekt
     {
         public int ProjektID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public List<Arbejdsopgave> Arbejdsopgaver { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

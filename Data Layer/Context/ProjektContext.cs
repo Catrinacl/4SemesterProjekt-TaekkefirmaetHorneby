@@ -35,7 +35,9 @@ namespace Data_Layer.Context
                 //TODO skal måske ikke ligge her??
             });
         }
-        public DbSet<IProjekt> projekts { get; set; }
-        public DbSet<Arbejdsopgave> arbejdsopgaves { get; set; }
+        public DbSet<IProjekt> Projekter { get; set; }
+        public DbSet<LangtProjekt> Langeprojekter { get; set; }
+        public DbSet<Arbejdsopgave> Arbejdsopgaver { get; set; }
+        public DbSet<DagsProjekt> Dagsprojekter { get; set; }
     }
 }
