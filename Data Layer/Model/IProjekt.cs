@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataAccess.Model
 {
-    internal interface IProjekt
+    public interface IProjekt
     {
         public int ProjektID { get; set; }
         // TODO: kunde link i senere iteration

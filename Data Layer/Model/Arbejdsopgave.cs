@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataAccess.Model
 {
-    internal class Arbejdsopgave
+    public class Arbejdsopgave
     {
         private string name;
         private string description;

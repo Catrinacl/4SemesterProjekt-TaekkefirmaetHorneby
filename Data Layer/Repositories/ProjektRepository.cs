@@ -10,11 +10,8 @@ namespace Data_Layer.Repositories
     {
         public static IProjekt GetProjekt(int id)
         {
-            using (ProjektContext context = new ProjektContext)
-            {
-                //TODO
-                //IProjekt projekt = 
-            }
-        } 
+            // TODO: Tilføj den rigtige databaselogik her senere
+            return null;
+        }
     }
 }
