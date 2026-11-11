@@ -223,7 +223,7 @@ namespace TaekApp.Views
         
         private async void OnOpretStandardArbejdsopgaveClicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new newStandardArbejdsopgave());
+            await Navigation.PushAsync(new StandardArbejdsopgave());
         }
         
 
