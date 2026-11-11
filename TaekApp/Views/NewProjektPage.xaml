@@ -7,54 +7,54 @@
         
         <Label 
             Text="ProjektID"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            VerticalOptions="Start" 
+            HorizontalOptions="Start" />
         <Entry Placeholder="Tilføj projektID" 
                Keyboard="Numeric"/>
 
         <Label 
             Text="KundeID"
-            VerticalOptions="Center"
-            HorizontalOptions="Center" />
+            VerticalOptions="Start"
+            HorizontalOptions="Start" />
         <Entry Placeholder="Tilføj kundeID"
                Keyboard="Numeric"/>
 
         <Label 
             Text="Medarbejdere"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            VerticalOptions="Start" 
+            HorizontalOptions="Start" />
             
         <Label
             Text="Adresse"
-            VerticalOptions="Center"
-            HorizontalOptions="Center" />
+            VerticalOptions="Start"
+            HorizontalOptions="Start" />
         <Entry Placeholder="Tilføj adresse" />
         
          <Label
             Text="Status"
-            VerticalOptions="Center"
-            HorizontalOptions="Center" />
+            VerticalOptions="Start"
+            HorizontalOptions="Start" />
           <Entry Placeholder="Tilføj status" />
             
          <Label
             Text="Forventet Varighed Timer"
-            VerticalOptions="Center"
-            HorizontalOptions="Center" />
+            VerticalOptions="Start"
+            HorizontalOptions="Start" />
           <Entry Placeholder="Tilføj varighed Timer"
                  Keyboard="Numeric"/>
             
           <Label
             Text="Kvadratmeter af tag"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"/>
+            VerticalOptions="Start"
+            HorizontalOptions="Start"/>
             <Entry Placeholder="Tilføj varighed Timer"
                    Keyboard="Numeric"/>
             
             
         <Button
             Text="Opret projekt"
-            VerticalOptions="Center"
-            HorizontalOptions="Center" /> 
+            VerticalOptions="Start"
+            HorizontalOptions="Start" /> 
             
     </VerticalStackLayout>
     
