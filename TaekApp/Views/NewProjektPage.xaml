@@ -57,4 +57,5 @@
             HorizontalOptions="Center" /> 
             
     </VerticalStackLayout>
+    
 </ContentPage>
