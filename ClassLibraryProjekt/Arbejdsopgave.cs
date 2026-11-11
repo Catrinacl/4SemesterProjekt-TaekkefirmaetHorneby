@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ClassLibraryProjekt
 {
-    internal class Arbejdsopgave
+    public class Arbejdsopgave
     {
     }
 }

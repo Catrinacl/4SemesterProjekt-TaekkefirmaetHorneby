@@ -1,10 +1,10 @@
-﻿using DataAccess.Model;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using DataAccess.Model;
 
 namespace Data_Layer.Context
 {
@@ -28,7 +28,7 @@ namespace Data_Layer.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<IProjekt>().HasData(new ProjektContext[] {
+            modelBuilder.Entity<IProjekt>().HasData(new IProjekt[] {
                 //TODO projekt opsætning
             });
             modelBuilder.Entity<Arbejdsopgave>().HasData(new Arbejdsopgave[] {

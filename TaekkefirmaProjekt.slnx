@@ -1,6 +1,5 @@
 <Solution>
-  <Project Path="BusinessLayer/BusinessLayer.csproj" />
-  <Project Path="ClassLibraryProjekt/ClassLibraryProjekt.csproj" Id="9fc627a8-9051-4756-8851-b54f69cb4a86" />
+  <Project Path="BusinessLayer/BusinessLogic.csproj" />
   <Project Path="Data Layer/DataAccess.csproj" Id="682c7fdb-a282-41b4-873f-1b6cccc50f73" />
   <Project Path="DTO/DTO.csproj" Id="bb2c5bbc-b393-499f-bd8c-7b0ca2425b9b" />
   <Project Path="TaekApp/TaekApp.csproj" Id="295c3ff6-a27d-46b5-b39b-4a2ce28d49cb">
