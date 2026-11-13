@@ -1,10 +1,10 @@
-﻿using Data_Layer.Context;
+﻿using DataAccess.Context;
 using DataAccess.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data_Layer.Repositories
+namespace DataAccess.Repositories
 {
     public class ProjektRepository
     {

@@ -6,7 +6,7 @@ using System.Text;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using DataAccess.Model;
 
-namespace Data_Layer.Context
+namespace DataAccess.Context
 {
     internal class ProjektContext : DbContext
     {
