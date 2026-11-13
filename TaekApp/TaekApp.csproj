@@ -79,6 +79,12 @@
 	  <Compile Update="Views\NewArbejdsopgavePage.xaml.cs">
 	    <DependentUpon>NewArbejdsopgavePage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\KunderPage.xaml.cs">
+	    <DependentUpon>KunderPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\MedarbejderPage.xaml.cs">
+	    <DependentUpon>MedarbejderPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>

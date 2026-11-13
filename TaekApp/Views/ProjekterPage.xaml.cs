@@ -23,6 +23,14 @@ public partial class ProjekterPage : ContentPage
         };
     }
 
+    private void OnOpretDagsprojektClicked(object sender, EventArgs e)
+    {
+        ProjekterListe.ItemsSource = new List<string>
+        {
+            "Opret nyt dagsprojekt"
+        };
+    }
+
     private void VisProjekter()
     {
         ProjekterListe.ItemsSource = new List<string>

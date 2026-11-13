@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TaekApp.newProject"
+             x:Class="TaekApp.Views.OpretMedarbejderPage"
              Title="Opret Medarbejder">
     <VerticalStackLayout>
 
@@ -9,15 +9,15 @@
             Text="ID"
             VerticalOptions="Start" 
             HorizontalOptions="Start" />
-        <Entry Placeholder="Tilføj projektID" 
+        <Entry Placeholder="Tilføj ID" 
                Keyboard="Numeric"
                WidthRequest="200"/>
 
         <Label 
-            Text="Navn"
+            Text="Navn på medarbejder"
             VerticalOptions="Start"
             HorizontalOptions="Start" />
-        <Entry Placeholder="Tilføj navn" />
+        <Entry Placeholder="Tilføj navn på medarbejder" />
 
         <Label 
             Text="Admin"
@@ -29,7 +29,7 @@
             Text="Telefonnummer"
             VerticalOptions="Start"
             HorizontalOptions="Start" />
-        <Entry Placeholder="Tilføj adresse"
+        <Entry Placeholder="Tilføj telefonnummer"
                WidthRequest="200"
                Keyboard="Telephone"/>
 
@@ -46,8 +46,8 @@
             VerticalOptions="Start"
             HorizontalOptions="Start" />
         <CheckBox IsChecked="False" />
-        
-        
+
+
         <Button
             Text="Opret"
             VerticalOptions="Start"
@@ -55,5 +55,5 @@
             WidthRequest="200" />
 
     </VerticalStackLayout>
-
+    
 </ContentPage>
