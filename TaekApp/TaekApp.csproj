@@ -85,6 +85,9 @@
 	  <MauiXaml Update="Views\NewArbejdsopgavePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\OpretMedarbejderPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\ProjekterPage.xaml">
 	  </MauiXaml>
 	  <MauiXaml Update="newProject.xaml">
