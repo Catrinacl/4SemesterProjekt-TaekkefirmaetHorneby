@@ -4,13 +4,58 @@
              x:Class="TaekApp.newProject"
              Title="newProject">
     <VerticalStackLayout>
+        
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            Text="ProjektID"
+            VerticalOptions="Start" 
+            HorizontalOptions="Start" />
+        <Entry Placeholder="Tilføj projektID" 
+               Keyboard="Numeric"/>
+
+        <Label 
+            Text="KundeID"
+            VerticalOptions="Start"
+            HorizontalOptions="Start" />
+        <Entry Placeholder="Tilføj kundeID"
+               Keyboard="Numeric"/>
+
+        <Label 
+            Text="Medarbejdere"
+            VerticalOptions="Start" 
+            HorizontalOptions="Start" />
+            
+        <Label
+            Text="Adresse"
+            VerticalOptions="Start"
+            HorizontalOptions="Start" />
+        <Entry Placeholder="Tilføj adresse" />
+        
+         <Label
+            Text="Status"
+            VerticalOptions="Start"
+            HorizontalOptions="Start" />
+          <Entry Placeholder="Tilføj status" />
+            
+         <Label
+            Text="Forventet Varighed Timer"
+            VerticalOptions="Start"
+            HorizontalOptions="Start" />
+          <Entry Placeholder="Tilføj varighed Timer"
+                 Keyboard="Numeric"/>
+            
+          <Label
+            Text="Kvadratmeter af tag"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"/>
+            <Entry Placeholder="Tilføj varighed Timer"
+                   Keyboard="Numeric"/>
+            
+            
         <Button
-            Text="Opret Projekt"
-            VerticalOptions="Center"
-            HorizontalOptions="Center" />
+            Text="Opret projekt"
+            VerticalOptions="Start"
+            HorizontalOptions="Start" /> 
+            
     </VerticalStackLayout>
+    
 </ContentPage>

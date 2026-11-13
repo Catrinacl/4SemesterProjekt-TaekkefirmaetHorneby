@@ -71,12 +71,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj" />
+	  <ProjectReference Include="..\BusinessLayer\BusinessLogic.csproj" />
 	  <ProjectReference Include="..\DTO\DTO.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\OpretDagsprojektPage.xaml">
+	  <Compile Update="Views\NewArbejdsopgavePage.xaml.cs">
+	    <DependentUpon>NewArbejdsopgavePage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\NewArbejdsopgavePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ProjekterPage.xaml">

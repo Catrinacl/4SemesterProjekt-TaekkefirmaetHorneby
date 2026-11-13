@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaekApp.Views.NewArbejdsopgavePage"
+             Title="Opret en standard arbejdsopgave">
+    
+    <VerticalStackLayout>
+            <Label 
+            Text="Arbejdsopgave ID"
+            VerticalOptions="Start" 
+            HorizontalOptions="Start" />
+            <Entry Placeholder="Tilføj arbejdsopgaveID" 
+                    Keyboard="Numeric"/>
+
+            <Label 
+            Text="Navn"
+            VerticalOptions="Start"
+            HorizontalOptions="Start" />
+            <Entry Placeholder="Tilføj Navn"
+                    Keyboard="Text"/>
+
+            <Label 
+            Text="Beskrivelse"
+            VerticalOptions="Start" 
+            HorizontalOptions="Start" />
+            <Entry Placeholder="Tilføj Beskrivelse"
+                    Keyboard="Text"/>
+
+            <Label
+            Text="Status"
+            VerticalOptions="Start"
+            HorizontalOptions="Start" />
+            <Entry Placeholder="Tilføj status" />
+
+            <Label
+            Text="Priority"
+            VerticalOptions="Start"
+            HorizontalOptions="Start" />
+            <Entry Placeholder="Tilføj priority"
+                    Keyboard="Numeric"/>    
+
+            <Label
+            Text="Start Dato"
+            VerticalOptions="Start"
+            HorizontalOptions="Start" />
+            <Entry Placeholder="Tilføj start dato"
+                    Keyboard="Text"/>
+
+            <Label
+            Text="Slut Dato"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"/>
+            <Entry Placeholder="Tilføj slut dato"
+                    Keyboard="Text"/>
+
+            <Button
+            Text="Opret arbejdsopgave"
+            VerticalOptions="Start"
+            HorizontalOptions="Start" />
+    </VerticalStackLayout>
+</ContentPage>

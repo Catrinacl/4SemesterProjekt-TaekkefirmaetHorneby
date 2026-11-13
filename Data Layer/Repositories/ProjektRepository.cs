@@ -1,0 +1,35 @@
+﻿using Data_Layer.Context;
+using DataAccess.Model;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Data_Layer.Repositories
+{
+    public class ProjektRepository
+    {
+        public static IProjekt GetProjekt(int id)
+        {
+            // TODO: Tilføj den rigtige databaselogik her senere
+            return null;
+        }
+
+        public void GemProjekt(LangtProjekt nytProjekt)
+        {
+            using (var context = new ProjektContext())
+            {
+                context.Langeprojekter.Add(nytProjekt);
+                context.SaveChanges();
+            }
+        }
+
+        public void GemDagsProjekt(DagsProjekt dagsProjekt)
+        {
+            using (var context = new ProjektContext())
+            {
+                context.Set<DagsProjekt>().Add(dagsProjekt);
+                context.SaveChanges();
+            }
+        }
+    }
+}
