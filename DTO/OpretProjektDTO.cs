@@ -5,7 +5,7 @@ using System.Text;
 namespace DTO
 {
     //DTO - WRITE
-    public class OpretProjekt
+    public class OpretProjektDTO
     {
         public int KundeID { get; set; }
         public string Adresse { get; set; } = string.Empty;

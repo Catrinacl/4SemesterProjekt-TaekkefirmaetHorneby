@@ -1,10 +1,10 @@
-﻿using Data_Layer.Context;
+﻿using DataAccess.Context;
 using DataAccess.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data_Layer.Repositories
+namespace DataAccess.Repositories
 {
     public class ProjektRepository
     {
@@ -28,6 +28,15 @@ namespace Data_Layer.Repositories
             using (var context = new ProjektContext())
             {
                 context.Set<DagsProjekt>().Add(dagsProjekt);
+                context.SaveChanges();
+            }
+        }
+
+        public void GemArbejdsopgave(Arbejdsopgave arbejdsopgave)
+        {
+            using (var context = new ProjektContext())
+            {
+                context.Arbejdsopgaver.Add(arbejdsopgave);
                 context.SaveChanges();
             }
         }

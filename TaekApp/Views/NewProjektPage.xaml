@@ -10,14 +10,16 @@
             VerticalOptions="Start" 
             HorizontalOptions="Start" />
         <Entry Placeholder="Tilføj projektID" 
-               Keyboard="Numeric"/>
+               Keyboard="Numeric"
+               WidthRequest="200"/>
 
         <Label 
             Text="KundeID"
             VerticalOptions="Start"
             HorizontalOptions="Start" />
         <Entry Placeholder="Tilføj kundeID"
-               Keyboard="Numeric"/>
+               Keyboard="Numeric"
+               WidthRequest="200"/>
 
         <Label 
             Text="Medarbejdere"
@@ -28,33 +30,38 @@
             Text="Adresse"
             VerticalOptions="Start"
             HorizontalOptions="Start" />
-        <Entry Placeholder="Tilføj adresse" />
+        <Entry Placeholder="Tilføj adresse"
+               WidthRequest="200" />
         
          <Label
             Text="Status"
             VerticalOptions="Start"
             HorizontalOptions="Start" />
-          <Entry Placeholder="Tilføj status" />
+          <Entry Placeholder="Tilføj status" 
+                 WidthRequest="200"/>
             
          <Label
             Text="Forventet Varighed Timer"
             VerticalOptions="Start"
             HorizontalOptions="Start" />
           <Entry Placeholder="Tilføj varighed Timer"
-                 Keyboard="Numeric"/>
+                 Keyboard="Numeric"
+                 WidthRequest="200" />
             
           <Label
             Text="Kvadratmeter af tag"
             VerticalOptions="Start"
             HorizontalOptions="Start"/>
             <Entry Placeholder="Tilføj varighed Timer"
-                   Keyboard="Numeric"/>
+                   Keyboard="Numeric" 
+                   WidthRequest="200" />
             
             
         <Button
             Text="Opret projekt"
             VerticalOptions="Start"
-            HorizontalOptions="Start" /> 
+            HorizontalOptions="Start"
+            WidthRequest="200" /> 
             
     </VerticalStackLayout>
     
