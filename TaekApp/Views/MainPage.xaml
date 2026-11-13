@@ -20,9 +20,9 @@
 
                 <BoxView HeightRequest="1" Color="Gray" Margin="0,10" />
 
-                <Button Text="Oversigtskalender" FontAttributes="Bold" BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Start" />
-                <Button Text="Medarbejderoversigt" FontAttributes="Bold" BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Start" />
-                <Button Text="Kundeoversigt" FontAttributes="Bold" BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Start" />
+                <Button Text="Oversigtskalender" FontAttributes="Bold" BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Start" Clicked="OnOversigtskalenderClicked"/>
+                <Button Text="Medarbejderoversigt" FontAttributes="Bold" BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Start" Clicked="OnMedarbejderoversigtClicked"/>
+                <Button Text="Kundeoversigt" FontAttributes="Bold" BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Start" Clicked="OnKundeoversigtClicked"/>
 
             </VerticalStackLayout>
         </Border>

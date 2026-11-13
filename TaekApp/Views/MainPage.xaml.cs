@@ -231,7 +231,22 @@ namespace TaekApp.Views
         {
             await Navigation.PushAsync(new ProjekterPage());
         }
+
+        private async void OnOversigtskalenderClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MainPage());
+        }
+
         
+        private async void OnMedarbejderoversigtClicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new MedarbejderOversigtPage());
+        }
+
+        private async void OnKundeoversigtClicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new KundeOversigtPage());
+        }
 
     }
 }
