@@ -76,6 +76,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\OpretDagsprojektPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\ProjekterPage.xaml">
 	  </MauiXaml>
 	  <MauiXaml Update="newProject.xaml">
