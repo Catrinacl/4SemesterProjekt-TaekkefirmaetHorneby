@@ -10,7 +10,7 @@ namespace BusinessLogic
     public class DagsprojektService
     {
         private readonly ProjektRepository _projektRepository = new ProjektRepository();
-        public void OpretNytDagsrojekt(OpretDagsprojektDTO nytProjektFraUI)
+        public void OpretNytDagsProjekt(OpretDagsprojektDTO nytProjektFraUI)
         {
             DagsProjekt dagsprojekt = new DagsProjekt
             {
