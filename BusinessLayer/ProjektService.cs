@@ -13,10 +13,12 @@ namespace BusinessLayer
         {
             LangtProjekt langtProjekt = new LangtProjekt
             {
+                /*
                 Adress = nytProjektFraUI.Adress,
                 Status = nytProjektFraUI.Status,
                 ExpectedDurationHours = nytProjektFraUI.ExpectedDurationHours,
                 RoofSqrM = nytProjektFraUI.RoofSqrM
+                */
             };
         }
     }
