@@ -217,7 +217,7 @@ namespace TaekApp.Views
         
         private async void OnOpretDagsprojektClicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new newDagsprojekt());
+            await Navigation.PushAsync(new OpretDagsprojektPage());
         }
 
         
@@ -232,20 +232,47 @@ namespace TaekApp.Views
             await Navigation.PushAsync(new ProjekterPage());
         }
 
-        private async void OnOversigtskalenderClicked(object sender, EventArgs e)
+        private void OnOversigtskalenderClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MainPage());
+            IndholdsContainer.IsVisible = false;
+            IndholdsContainer.Content = null;
+            KalenderContainer.IsVisible = true;
+
+            btnOpretProjekt.IsVisible = true;
+            btnOpretDagsprojekt.IsVisible = true;
+            btnOpretArbejdsopgave.IsVisible = true;
+
+            btnOpretKunde.IsVisible = false;
+            btnOpretMedarbejder.IsVisible = false;
         }
 
-        
-        private async void OnMedarbejderoversigtClicked(object sender, EventArgs e)
+        private void OnMedarbejderoversigtClicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new MedarbejderOversigtPage());
+            KalenderContainer.IsVisible = false;
+            IndholdsContainer.IsVisible = true;
+            IndholdsContainer.Content = new MedarbejderPage();
+
+            btnOpretProjekt.IsVisible = false;
+            btnOpretDagsprojekt.IsVisible = false;
+            btnOpretArbejdsopgave.IsVisible = false;
+            btnOpretKunde.IsVisible = false;
+
+            btnOpretMedarbejder.IsVisible = true;
         }
 
-        private async void OnKundeoversigtClicked(object sender, EventArgs e)
+
+        private void OnKundeoversigtClicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new KundeOversigtPage());
+            KalenderContainer.IsVisible = false;
+            IndholdsContainer.IsVisible = true;
+            IndholdsContainer.Content = new KunderPage();
+
+            btnOpretProjekt.IsVisible = false;
+            btnOpretDagsprojekt.IsVisible = false;
+            btnOpretArbejdsopgave.IsVisible = false;
+            btnOpretMedarbejder.IsVisible = false;
+
+            btnOpretKunde.IsVisible = true;
         }
 
     }
