@@ -40,4 +40,5 @@ public partial class ProjekterPage : ContentPage
             "Renovering af lade"
         };
     }
+ 
 }

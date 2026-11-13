@@ -214,13 +214,13 @@ namespace TaekApp.Views
             await Navigation.PushAsync(new newProject());
         }
 
-        
+
         private async void OnOpretDagsprojektClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new OpretDagsprojektPage());
         }
 
-        
+
         private async void OnOpretStandardArbejdsopgaveClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new StandardArbejdsopgave());

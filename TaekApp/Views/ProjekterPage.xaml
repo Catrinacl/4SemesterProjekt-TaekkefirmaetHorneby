@@ -23,9 +23,7 @@
             <Button
                 Text="Dagsprojekter"
                 Clicked="OnDagsprojekterClicked" />
-            <Button
-                 Text="+ Opret dagsprojekt"
-                 Clicked="OnOpretDagsprojektClicked" />
+        
 
         </HorizontalStackLayout>
 

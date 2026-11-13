@@ -14,17 +14,33 @@
                 FontAttributes="Bold" />
 
             <Label Text="Adresse" />
-
             <Entry
                 x:Name="AdresseEntry"
                 Placeholder="Indtast projektets adresse" />
 
-            <Label Text="Tagareal i m²" />
+            <Label Text="Status" />
+            <Entry
+                x:Name="StatusEntry"
+                Text="Fremtidigt projekt"
+                Placeholder="Indtast status" />
 
+            <Label Text="Forventet varighed i timer" />
+            <Entry
+                x:Name="VarighedEntry"
+                Placeholder="Indtast antal timer"
+                Keyboard="Numeric" />
+
+            <Label Text="Tagareal i m²" />
             <Entry
                 x:Name="TagarealEntry"
                 Placeholder="Indtast tagareal"
                 Keyboard="Numeric" />
+
+            <Label Text="Startdato" />
+            <DatePicker x:Name="StartdatoPicker" />
+
+            <Label Text="Slutdato" />
+            <DatePicker x:Name="SlutdatoPicker" />
 
             <Button
                 Text="Opret dagsprojekt"
