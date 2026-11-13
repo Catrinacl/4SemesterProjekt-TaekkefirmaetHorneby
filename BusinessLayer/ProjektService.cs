@@ -9,17 +9,19 @@ namespace BusinessLayer
     {
 
         private readonly ProjektRepository _projektRepository = new ProjektRepository();
-        public void OpretNytProjekt(OpretProjekt nytProjektFraUI)
+        public void OpretNytProjekt(OpretProjektDTO nytProjektFraUI)
         {
             LangtProjekt langtProjekt = new LangtProjekt
             {
-                /*
-                Adress = nytProjektFraUI.Adress,
+
+                Adress = nytProjektFraUI.Adresse,
                 Status = nytProjektFraUI.Status,
-                ExpectedDurationHours = nytProjektFraUI.ExpectedDurationHours,
-                RoofSqrM = nytProjektFraUI.RoofSqrM
-                */
+                ExpectedDurationHours = nytProjektFraUI.ForventetVarighedTimer,
+                RoofSqrM = nytProjektFraUI.KvadratmeterAfTag
+
             };
+
+            _projektRepository.GemProjekt(langtProjekt);
         }
     }
 }

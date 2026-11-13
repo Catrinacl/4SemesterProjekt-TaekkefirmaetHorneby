@@ -31,5 +31,14 @@ namespace DataAccess.Repositories
                 context.SaveChanges();
             }
         }
+
+        public void GemArbejdsopgave(Arbejdsopgave arbejdsopgave)
+        {
+            using (var context = new ProjektContext())
+            {
+                context.Arbejdsopgaver.Add(arbejdsopgave);
+                context.SaveChanges();
+            }
+        }
     }
 }
