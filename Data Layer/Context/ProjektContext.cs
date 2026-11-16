@@ -39,5 +39,7 @@ namespace DataAccess.Context
         public DbSet<LangtProjekt> Langeprojekter { get; set; }
         public DbSet<Arbejdsopgave> Arbejdsopgaver { get; set; }
         public DbSet<DagsProjekt> Dagsprojekter { get; set; }
+
+        public DbSet<Kunde> Kunder { get; set; }
     }
 }
