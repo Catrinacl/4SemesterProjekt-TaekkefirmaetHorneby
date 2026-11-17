@@ -24,5 +24,41 @@ namespace BusinessLogic
                 Mail = k.Mail
             }).ToList();
         }
+
+        
+        public void OpretKunde(KundeDTO kundeDTO)
+        {
+            Kunde kunde = new Kunde
+            {
+                Kundenummer = kundeDTO.Kundenummer,
+                Navn = kundeDTO.Navn,
+                Adresse = kundeDTO.Adresse,
+                Telefonnr = kundeDTO.Telefonnr,
+                Mail = kundeDTO.Mail
+            };
+
+            _repository.OpretKunde(kunde);
+        }
+
+
+        public void OpdaterKunde(KundeDTO kundeDTO)
+        {
+            Kunde kunde = new Kunde
+            {
+                Kundenummer = kundeDTO.Kundenummer,
+                Navn = kundeDTO.Navn,
+                Adresse = kundeDTO.Adresse,
+                Telefonnr = kundeDTO.Telefonnr,
+                Mail = kundeDTO.Mail
+            };
+
+            _repository.OpdaterKunde(kunde);
+        }
+
+
+        public void SletKunde(int kundenummer)
+        {
+            _repository.SletKunde(kundenummer);
+        }
     }
 }
