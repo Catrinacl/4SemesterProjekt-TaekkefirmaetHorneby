@@ -8,11 +8,11 @@ public partial class KunderPage : ContentView
     public KunderPage()
 	{
 		InitializeComponent();
-		TestData();
+		TestDataKunder();
 		
 	}
 
-    public void TestData()
+    public void TestDataKunder()
     {
         List<KundeDTO> testKunder = new List<KundeDTO>
         {

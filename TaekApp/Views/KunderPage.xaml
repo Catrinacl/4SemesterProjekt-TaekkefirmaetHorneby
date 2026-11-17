@@ -11,9 +11,8 @@
         <Grid Grid.Row="1" ColumnDefinitions="2*, 2.5*, 1.5*, 2*, Auto" BackgroundColor="#E0E0E0" Padding="15,10">
             <Label Grid.Column="0" Text="Navn" FontAttributes="Bold" />
             <Label Grid.Column="1" Text="Adresse" FontAttributes="Bold" />
-            <Label Grid.Column="2" Text="Telefon" FontAttributes="Bold" />
+            <Label Grid.Column="2" Text="Telefon Nr." FontAttributes="Bold" />
             <Label Grid.Column="3" Text="Email" FontAttributes="Bold" />
-            <Label Grid.Column="4" Text="Handling" FontAttributes="Bold" WidthRequest="80" HorizontalTextAlignment="Center" />
         </Grid>
 
         <CollectionView Grid.Row="2" x:Name="collectionViewKunder">

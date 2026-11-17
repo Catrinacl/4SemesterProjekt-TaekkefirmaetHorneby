@@ -2,7 +2,34 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaekApp.Views.MedarbejderPage">
-    <VerticalStackLayout>
-        <Label Text="Medarbejderoversigt" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid RowDefinitions="Auto, Auto, *" Padding="20" RowSpacing="10">
+        <Grid Grid.Row="0" ColumnDefinitions="*, 300" Margin="0,0,0,10" >
+            <Label Grid.Column="0" Text="Medarbejderoversigt" FontSize="24" FontAttributes="Bold" VerticalOptions="Center" />
+        </Grid>
+
+        <Grid Grid.Row="1" ColumnDefinitions="2*, 2.5*, 1.5*, 2*, Auto" BackgroundColor="#E0E0E0" Padding="15,10">
+            <Label Grid.Column="0" Text="Navn" FontAttributes="Bold" />
+            <Label Grid.Column="1" Text="Admin" FontAttributes="Bold" />
+            <Label Grid.Column="2" Text="Telefon Nr." FontAttributes="Bold" />
+            <Label Grid.Column="3" Text="Email" FontAttributes="Bold" />
+            <Label Grid.Column="4" Text="Lærling" FontAttributes="Bold" WidthRequest="80" HorizontalTextAlignment="Center" />
+        </Grid>
+
+        <CollectionView Grid.Row="2" x:Name="collectionViewMedarbejdere">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Grid ColumnDefinitions="2*, 2.5*, 1.5*, 2*, Auto" Padding="15,12" VerticalOptions="Center">
+                            <Label Grid.Column="0" Text="{Binding Navn}" FontAttributes="Bold" VerticalOptions="Center" />
+                            <Label Grid.Column="1" Text="{Binding Admin}" VerticalOptions="Center" />
+                            <Label Grid.Column="2" Text="{Binding Telefonnr}" VerticalOptions="Center" />
+                            <Label Grid.Column="3" Text="{Binding Mail}" VerticalOptions="Center" TextColor="#555555" />
+                            <Label Grid.Column="4" Text="{Binding Laerling}" VerticalOptions="Center" WidthRequest="80" HorizontalTextAlignment="Center" />
+                        </Grid>
+                        <BoxView HeightRequest="1" Color="#E0E0E0" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentView>
