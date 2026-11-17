@@ -16,7 +16,7 @@
                 <Button x:Name="btnOpretArbejdsopgave" Text="+ Opret Arbejdsopgave" Clicked="OnOpretStandardArbejdsopgaveClicked" BackgroundColor="#4CAF50" TextColor="White" FontAttributes="Bold" />
 
 
-                    <!-- Skjulte knapper -->
+                    <!-- Skjulte knapper, som kommer frem ved contentView skift -->
                     <Button x:Name="btnOpretKunde" Text="+ Opret Kunde" BackgroundColor="#4CAF50" TextColor="White" FontAttributes="Bold" IsVisible="False" Clicked="OnOpretKundeClicked"/>
                     <Button x:Name="btnOpretMedarbejder" Text="+ Opret Medarbejder" BackgroundColor="#4CAF50" TextColor="White" FontAttributes="Bold" IsVisible="False" Clicked="OnOpretMedarbejderClicked"/>
 
