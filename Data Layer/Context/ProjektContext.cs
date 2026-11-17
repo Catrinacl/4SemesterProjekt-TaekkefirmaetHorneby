@@ -10,6 +10,7 @@ namespace DataAccess.Context
 {
     internal class ProjektContext : DbContext
     {
+
         public ProjektContext()
         {
             bool created = Database.EnsureCreated();
@@ -21,21 +22,28 @@ namespace DataAccess.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //TODO
-            //optionsBuilder.UseSqlServer("");
-            //optionsBuilder.LogTo(message => Debug.WriteLine(message));
+
+            //Info skal udskiftes med brugerens egne oplysninger, for at kunne køre programmet.
+            //Tænker ikke det er sådan vi skal gøre det i sidste ende, men for nu er det en hurtig løsning.
+            optionsBuilder.UseSqlServer(
+                "Data Source=SimPC\\SQLEXPRESS;" +
+                "Initial Catalog=ProjektDatabase;" +
+                "User ID=DIT_BRUGERNAVN;" +
+                "Password=DIT_PASSWORD;" +
+                "TrustServerCertificate=True");
+
+            optionsBuilder.LogTo(message =>
+                Debug.WriteLine(message));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<IProjekt>().HasData(new IProjekt[] {
-                //TODO projekt opsætning
-            });
+           
             modelBuilder.Entity<Arbejdsopgave>().HasData(new Arbejdsopgave[] {
-                //TODO skal måske ikke ligge her??
+                //TODO skal laves når vi er sikre på modellerne og relationerne mellem dem.
             });
         }
-        public DbSet<IProjekt> Projekter { get; set; }
+       
         public DbSet<LangtProjekt> Langeprojekter { get; set; }
         public DbSet<Arbejdsopgave> Arbejdsopgaver { get; set; }
         public DbSet<DagsProjekt> Dagsprojekter { get; set; }
