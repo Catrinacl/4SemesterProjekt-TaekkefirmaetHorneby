@@ -25,5 +25,43 @@ namespace BusinessLogic
                 Lærling = m.Lærling
             }).ToList();
         }
+
+
+        public void OpretMedarbejder(MedarbejderDTO medarbejderDTO)
+        {
+            Medarbejder medarbejder = new Medarbejder
+            {
+                ID = medarbejderDTO.ID,
+                Navn = medarbejderDTO.Navn,
+                Admin = medarbejderDTO.Admin,
+                Telefonnr = medarbejderDTO.Telefonnr,
+                Mail = medarbejderDTO.Mail,
+                Lærling = medarbejderDTO.Lærling
+            };
+
+            _repository.OpretMedarbejder(medarbejder);
+        }
+
+
+        public void OpdaterMedarbejder(MedarbejderDTO medarbejderDTO)
+        {
+            Medarbejder medarbejder = new Medarbejder
+            {
+                ID = medarbejderDTO.ID,
+                Navn = medarbejderDTO.Navn,
+                Admin = medarbejderDTO.Admin,
+                Telefonnr = medarbejderDTO.Telefonnr,
+                Mail = medarbejderDTO.Mail,
+                Lærling = medarbejderDTO.Lærling
+            };
+
+            _repository.OpdaterMedarbejder(medarbejder);
+        }
+
+
+        public void SletMedarbejder(int id)
+        {
+            _repository.SletMedarbejder(id);
+        }
     }
 }
