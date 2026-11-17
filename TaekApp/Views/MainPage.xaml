@@ -18,8 +18,8 @@
 
 
                     <!-- Skjulte knapper -->
-                    <Button x:Name="btnOpretKunde" Text="+ Opret Kunde" BackgroundColor="#4CAF50" TextColor="White" FontAttributes="Bold" IsVisible="False" />
-                    <Button x:Name="btnOpretMedarbejder" Text="+ Opret Medarbejder" BackgroundColor="#4CAF50" TextColor="White" FontAttributes="Bold" IsVisible="False" />
+                    <Button x:Name="btnOpretKunde" Text="+ Opret Kunde" BackgroundColor="#4CAF50" TextColor="White" FontAttributes="Bold" IsVisible="False" Clicked="OnOpretKundeClicked"/>
+                    <Button x:Name="btnOpretMedarbejder" Text="+ Opret Medarbejder" BackgroundColor="#4CAF50" TextColor="White" FontAttributes="Bold" IsVisible="False" Clicked="OnOpretMedarbejderClicked"/>
 
 
                     <BoxView HeightRequest="1" Color="Gray" Margin="0,10" />

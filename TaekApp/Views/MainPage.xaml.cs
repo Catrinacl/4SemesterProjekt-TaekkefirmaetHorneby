@@ -275,5 +275,18 @@ namespace TaekApp.Views
             btnOpretKunde.IsVisible = true;
         }
 
+        
+        private async void OnOpretKundeClicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new OpretKundePage());
+        }   
+        
+
+        private async void OnOpretMedarbejderClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new OpretMedarbejderPage());
+        }
+
+
     }
 }
