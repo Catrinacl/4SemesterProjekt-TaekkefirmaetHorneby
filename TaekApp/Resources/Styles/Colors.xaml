@@ -41,4 +41,12 @@
     <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}"/>
     <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}"/>
     <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/>
+
+
+    <Color x:Key="HornebyOliveGreen">#617300</Color>
+    <Color x:Key="HornebyThatchBrown">#A68867</Color>
+    <Color x:Key="HornebySandAccent">#C9B49A</Color>
+    <Color x:Key="HornebyBeigeBg">#F1EFEA</Color>
+    <Color x:Key="HornebySandGray">#E6E2DD</Color>
+    <Color x:Key="HornebyDarkText">#4A4946</Color>
 </ResourceDictionary>

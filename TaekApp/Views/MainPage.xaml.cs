@@ -57,45 +57,45 @@ namespace TaekApp.Views
                     Title = "Stråtag - Århus Vej 1",
                     StartDate = new DateTime(2026, 10, 27),
                     EndDate = new DateTime(2026, 10, 30),
-                    BackgroundColor = Color.FromArgb("#FFE0B2"),
-                    BorderColor = Color.FromArgb("#FB8C00"),
-                    TextColor = Color.FromArgb("#E65100")
+                    BackgroundColor = (Color)Application.Current!.Resources["HornebyThatchBrown"],
+                    BorderColor = (Color)Application.Current!.Resources["HornebyOliveGreen"],
+                    TextColor = Color.FromArgb("#F0F0F0")
                 },
                 new CalendarProject
                 {
                     Title = "Stråtag - Terpvej 68",
                     StartDate = new DateTime(2026, 10, 29),
                     EndDate = new DateTime(2026, 11, 1),
-                    BackgroundColor = Color.FromArgb("#FFF9C4"),
-                    BorderColor = Color.FromArgb("#FBC02D"),
-                    TextColor = Color.FromArgb("#F57F17")
+                    BackgroundColor = (Color)Application.Current!.Resources["HornebyThatchBrown"],
+                    BorderColor = (Color)Application.Current!.Resources["HornebyOliveGreen"],
+                    TextColor = Color.FromArgb("#F0F0F0")
                 },
                 new CalendarProject
                 {
                     Title = "Reparation af mønning",
                     StartDate = new DateTime(2026, 11, 11),
                     EndDate = new DateTime(2026, 11, 13),
-                    BackgroundColor = Color.FromArgb("#E1BEE7"),
-                    BorderColor = Color.FromArgb("#8E24AA"),
-                    TextColor = Color.FromArgb("#4A148C")
+                    BackgroundColor = (Color)Application.Current!.Resources["HornebyThatchBrown"],
+                    BorderColor = (Color)Application.Current!.Resources["HornebyOliveGreen"],
+                    TextColor = Color.FromArgb("#F0F0F0")
                 },
                 new CalendarProject
                 {
                     Title = "Nyt stråtag - Randersvej 14",
                     StartDate = new DateTime(2026, 12, 7),
                     EndDate = new DateTime(2026, 12, 11),
-                    BackgroundColor = Color.FromArgb("#C8E6C9"),
-                    BorderColor = Color.FromArgb("#4CAF50"),
-                    TextColor = Color.FromArgb("#1B5E20")
+                    BackgroundColor = (Color)Application.Current!.Resources["HornebyThatchBrown"],
+                    BorderColor = (Color)Application.Current!.Resources["HornebyOliveGreen"],
+                    TextColor = Color.FromArgb("#F0F0F0")
                 },
                 new CalendarProject
                 {
                     Title = "Eftersyn & Reparation",
                     StartDate = new DateTime(2027, 1, 14),
                     EndDate = new DateTime(2027, 1, 18),
-                    BackgroundColor = Color.FromArgb("#BBDEFB"),
-                    BorderColor = Color.FromArgb("#1976D2"),
-                    TextColor = Color.FromArgb("#0D47A1")
+                    BackgroundColor = (Color)Application.Current!.Resources["HornebyThatchBrown"],
+                    BorderColor = (Color)Application.Current!.Resources["HornebyOliveGreen"],
+                    TextColor = Color.FromArgb("#F0F0F0")
                 }
             };
         }
