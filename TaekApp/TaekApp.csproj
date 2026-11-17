@@ -76,8 +76,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\NewArbejdsopgavePage.xaml.cs">
-	    <DependentUpon>NewArbejdsopgavePage.xaml</DependentUpon>
+	  <Compile Update="Views\OpretArbejdsopgavePage.xaml.cs">
+	    <DependentUpon>OpretArbejdsopgavePage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Views\KunderPage.xaml.cs">
 	    <DependentUpon>KunderPage.xaml</DependentUpon>
@@ -85,10 +85,13 @@
 	  <Compile Update="Views\MedarbejderPage.xaml.cs">
 	    <DependentUpon>MedarbejderPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\OpretProjektPage.xaml.cs">
+	    <DependentUpon>OpretProjektPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\NewArbejdsopgavePage.xaml">
+	  <MauiXaml Update="Views\OpretArbejdsopgavePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\OpretMedarbejderPage.xaml">

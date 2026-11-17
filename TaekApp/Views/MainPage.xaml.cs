@@ -211,7 +211,7 @@ namespace TaekApp.Views
 
         private async void OnOpretProjektClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new newProject());
+            await Navigation.PushAsync(new OpretProjektPage());
         }
 
 
