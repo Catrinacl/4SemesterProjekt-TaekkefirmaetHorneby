@@ -9,47 +9,55 @@
             Text="ID"
             VerticalOptions="Start" 
             HorizontalOptions="Start" />
-        <Entry Placeholder="Tilføj ID" 
+        <Entry Placeholder="Tilføj ID"
+               x:Name="idIndtast"
                Keyboard="Numeric"
                WidthRequest="200"/>
 
-        <Label 
+        <Label
             Text="Navn på medarbejder"
             VerticalOptions="Start"
             HorizontalOptions="Start" />
-        <Entry Placeholder="Tilføj navn på medarbejder" />
+
+        <Entry
+            x:Name="medarbejderIndtast"
+            Placeholder="Tilføj navn på medarbejder"
+            WidthRequest="200" />
 
         <Label 
             Text="Admin"
             VerticalOptions="Start" 
             HorizontalOptions="Start" />
-        <CheckBox IsChecked="False" />
+        <CheckBox IsChecked="False"
+                  WidthRequest="200" />
 
         <Label
             Text="Telefonnummer"
             VerticalOptions="Start"
             HorizontalOptions="Start" />
-        <Entry Placeholder="Tilføj telefonnummer"
-               WidthRequest="200"
-               Keyboard="Telephone"/>
+        <Entry x:Name="telefonNrIndtast" 
+               Placeholder="Tilføj telefonnummer"
+               WidthRequest="200" />
 
         <Label
             Text="Mail"
             VerticalOptions="Start"
             HorizontalOptions="Start" />
-        <Entry Placeholder="Tilføj mail" 
-                 WidthRequest="200"
-               Keyboard="Email"/>
+        <Entry x:Name= "mailIndtast" 
+               Placeholder="Tilføj mail" 
+               WidthRequest="200" />
 
         <Label
             Text="Lærling"
             VerticalOptions="Start"
             HorizontalOptions="Start" />
-        <CheckBox IsChecked="False" />
-
+        <Entry x:Name="isLæring"/>
+        <CheckBox IsChecked="False" 
+                  WidthRequest="200" />
 
         <Button
             Text="Opret"
+            Clicked="Button_Clicked"
             VerticalOptions="Start"
             HorizontalOptions="Start"
             WidthRequest="200" />
