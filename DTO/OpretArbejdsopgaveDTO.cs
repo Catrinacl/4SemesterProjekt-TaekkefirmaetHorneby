@@ -6,12 +6,12 @@ namespace DTO
 {
     public class OpretArbejdsopgaveDTO
     {
-        public string name { get; set; }
-        public string description { get; set; }
-        public string status { get; set; }
-        public int priority { get; set; }
-        public DateTime startDate { get; set; }
-        public DateTime endDate { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Status { get; set; }
+        public int Priority { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
 
 
     }

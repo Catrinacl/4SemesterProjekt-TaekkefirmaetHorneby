@@ -19,17 +19,17 @@ namespace BusinessLogic
          */
 
         private readonly ProjektRepository _projektRepository = new ProjektRepository();
-        public void OpretNyArbejdsopgave(OpretArbejdsopgaveDTO nytProjektFraUI)
+        public void OpretNyArbejdsopgave(OpretArbejdsopgaveDTO nyArbejdsopgaveFraUI)
         {
             Arbejdsopgave arbejdsopgave = new Arbejdsopgave
             {
 
-                Name = nytProjektFraUI.name,
-                Description = nytProjektFraUI.description,
-                Status = nytProjektFraUI.status,
-                Priority = nytProjektFraUI.priority,
-                StartDate = nytProjektFraUI.startDate,
-                EndDate = nytProjektFraUI.endDate
+                Name = nyArbejdsopgaveFraUI.Name,
+                Description = nyArbejdsopgaveFraUI.Description,
+                Status = nyArbejdsopgaveFraUI.Status,
+                Priority = nyArbejdsopgaveFraUI.Priority,
+                StartDate = nyArbejdsopgaveFraUI.StartDate,
+                EndDate = nyArbejdsopgaveFraUI.EndDate
             };
 
             _projektRepository.GemArbejdsopgave(arbejdsopgave);
