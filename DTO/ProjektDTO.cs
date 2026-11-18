@@ -11,7 +11,7 @@ namespace DTO
         public int KundeID { get; set; }
         public string Adresse { get; set; } = string.Empty;
         public string Status { get; set; } = string.Empty;
-        public int ForventetVarighedTimer { get; set; }
+        public double ForventetVarighedTimer { get; set; }
         public double KvadratmeterAfTag { get; set; }
 
         public List<string> MedarbejderNavne { get; set; } = new();
