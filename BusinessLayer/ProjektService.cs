@@ -3,7 +3,7 @@ using DataAccess.Model;
 using DataAccess.Repositories;
 
 
-namespace BusinessLayer
+namespace BusinessLogic
 {
     public class ProjektService
     {
