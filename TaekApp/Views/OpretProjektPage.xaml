@@ -9,7 +9,8 @@
             Text="ProjektID"
             VerticalOptions="Start" 
             HorizontalOptions="Start" />
-        <Entry Placeholder="Tilføj projektID" 
+        <Entry x:Name="projektInput" 
+               Placeholder="Tilføj projektID" 
                Keyboard="Numeric"
                WidthRequest="200"/>
 
@@ -17,34 +18,42 @@
             Text="KundeID"
             VerticalOptions="Start"
             HorizontalOptions="Start" />
-        <Entry Placeholder="Tilføj kundeID"
+        <Entry x:Name="kundeIdInput" 
+               Placeholder="Tilføj kundeID"
                Keyboard="Numeric"
                WidthRequest="200"/>
 
-        <Label 
+        <Label
             Text="Medarbejdere"
             VerticalOptions="Start" 
             HorizontalOptions="Start" />
-            
+        <Picker x:Name="MedListe"
+                BackgroundColor="SlateGray"
+                WidthRequest="200"
+                FontSize="18"/>
+
         <Label
             Text="Adresse"
             VerticalOptions="Start"
             HorizontalOptions="Start" />
-        <Entry Placeholder="Tilføj adresse"
+        <Entry x:Name="adresseInput" 
+               Placeholder="Tilføj adresse"
                WidthRequest="200" />
         
          <Label
             Text="Status"
             VerticalOptions="Start"
             HorizontalOptions="Start" />
-          <Entry Placeholder="Tilføj status" 
+          <Entry x:Name="statusInput" 
+                 Placeholder="Tilføj status" 
                  WidthRequest="200"/>
             
          <Label
             Text="Forventet Varighed Timer"
             VerticalOptions="Start"
             HorizontalOptions="Start" />
-          <Entry Placeholder="Tilføj varighed Timer"
+          <Entry x:Name="forventetVarighedInput" 
+                 Placeholder="Tilføj varighed Timer"
                  Keyboard="Numeric"
                  WidthRequest="200" />
             
@@ -52,12 +61,14 @@
             Text="Kvadratmeter af tag"
             VerticalOptions="Start"
             HorizontalOptions="Start"/>
-            <Entry Placeholder="Tilføj varighed Timer"
+            <Entry x:Name="kvadratMeterTagIndput" 
+                   Placeholder="Tilføj varighed Timer"
                    Keyboard="Numeric" 
                    WidthRequest="200" />
             
             
         <Button
+            Clicked="Button_Clicked"
             Text="Opret projekt"
             VerticalOptions="Start"
             HorizontalOptions="Start"

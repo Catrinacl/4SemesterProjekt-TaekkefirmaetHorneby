@@ -1,13 +1,18 @@
+using DataAccess.Model;
 using DTO;
 
 namespace TaekApp.Views;
 
 public partial class MedarbejderPage : ContentView
 {
-	public MedarbejderPage()
+    
+
+    public MedarbejderPage()
 	{
 		InitializeComponent();
         TestDataMedarbejdere();
+
+        collectionViewMedarbejdere.ItemsSource = OpretMedarbejderPage.medarbejderList;
 	}
 
     public void TestDataMedarbejdere()
@@ -21,6 +26,4 @@ public partial class MedarbejderPage : ContentView
         collectionViewMedarbejdere.ItemsSource = testMedarbejdere;
 
     }
-
-
 }
