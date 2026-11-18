@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace DataAccess.Model
 {
+
     public class LangtProjekt : IProjekt
     {
-        public int ProjektID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public List<Arbejdsopgave> Arbejdsopgaver { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Adress { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Status { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double ExpectedDurationHours { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double RoofSqrM { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        [Key]
+        public int ProjektID { get; set; }
+        public List<Arbejdsopgave> Arbejdsopgaver { get; set; } = new();
+        public string Adress { get; set; } = string.Empty;
+        public string Status { get; set; } = string.Empty;
+        public double ExpectedDurationHours { get; set; }
+        public double RoofSqrM { get; set; }
     }
 }

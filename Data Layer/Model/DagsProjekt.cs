@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel.DataAnnotations;
 
 namespace DataAccess.Model
 {
     public class DagsProjekt : IProjekt
     {
+        [Key]
         public int ProjektID { get; set; }
         public List<Arbejdsopgave> Arbejdsopgaver { get; set; } = new();
         public string Adress { get; set; } = string.Empty;
