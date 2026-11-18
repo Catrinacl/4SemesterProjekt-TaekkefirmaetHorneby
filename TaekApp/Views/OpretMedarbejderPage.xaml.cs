@@ -1,4 +1,3 @@
-using DataAccess.Model;
 using DTO;
 namespace TaekApp.Views;
 
