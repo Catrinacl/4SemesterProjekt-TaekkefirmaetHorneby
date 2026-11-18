@@ -8,7 +8,7 @@ namespace DataAccess.Repositories
 {
     public class ProjektRepository
     {
-        public static IProjekt GetProjekt(int id)
+        public IProjekt GetProjekt(int id)
         {
             // TODO: Tilføj den rigtige databaselogik her senere
             return null;
@@ -27,7 +27,7 @@ namespace DataAccess.Repositories
         {
             using (var context = new ProjektContext())
             {
-                context.Set<DagsProjekt>().Add(dagsProjekt);
+                context.Dagsprojekter.Add(dagsProjekt);
                 context.SaveChanges();
             }
         }

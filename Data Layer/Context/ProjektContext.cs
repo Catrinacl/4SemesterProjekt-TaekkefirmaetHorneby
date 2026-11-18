@@ -51,5 +51,6 @@ namespace DataAccess.Context
         public DbSet<Kunde> Kunder { get; set; }
 
         public DbSet<Medarbejder> Medarbejdere { get; set; }
+        public DbSet<ArbejdsTeam> ArbejdsTeams { get; set; }
     }
 }
