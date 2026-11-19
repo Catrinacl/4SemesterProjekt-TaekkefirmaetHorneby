@@ -1,42 +1,70 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
+<ContentView
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="TaekApp.Views.ProjekterPage">
 
-    <Grid Padding="20"
-          RowDefinitions="Auto,Auto,*"
-          RowSpacing="15">
-
-        <Label
-            Grid.Row="0"
-            Text="Projektoversigt"
-            FontSize="28"
-            FontAttributes="Bold" />
-
-        <HorizontalStackLayout Grid.Row="1" Spacing="10">
-
-            <Button
-                Text="Projekter"
-                Clicked="OnProjekterClicked" />
-
-            <Button
-                Text="Dagsprojekter"
-                Clicked="OnDagsprojekterClicked" />
+    <Grid RowDefinitions="Auto, Auto, Auto, *" Padding="20" RowSpacing="10">
+        <Label Grid.Row="0"
+               Text="Projektoversigt"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="{StaticResource HornebyDarkText}"
+               Margin="0,0,0,5" />
         
+        <HorizontalStackLayout Grid.Row="1" Spacing="10" Margin="0,0,0,5">
+            <Button x:Name="btnProjekter"
+                    Text="Projekter"
+                    Clicked="OnProjekterClicked"
+                    BackgroundColor="#617300"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="8" />
 
+            <Button x:Name="btnDagsprojekter"
+                    Text="Dagsprojekter"
+                    Clicked="OnDagsprojekterClicked"
+                    BackgroundColor="#A68867"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="8" />
         </HorizontalStackLayout>
 
-        <CollectionView
-            x:Name="ProjekterListe"
-            Grid.Row="2">
+        <Grid Grid.Row="2"
+              ColumnDefinitions="0.8*, 2.2*, 1.5*, 1.2*, 1.2*"
+              BackgroundColor="#E6E2DD"
+              Padding="15,10">
+            <Label Grid.Column="0" Text="ID" FontAttributes="Bold" TextColor="{StaticResource HornebyDarkText}" />
+            <Label Grid.Column="1" Text="Adresse" FontAttributes="Bold" TextColor="{StaticResource HornebyDarkText}" />
+            <Label Grid.Column="2" Text="Status" FontAttributes="Bold" TextColor="{StaticResource HornebyDarkText}" />
+            <Label Grid.Column="3" Text="Varighed" FontAttributes="Bold" TextColor="{StaticResource HornebyDarkText}" />
+            <Label Grid.Column="4" Text="Tagareal" FontAttributes="Bold" TextColor="{StaticResource HornebyDarkText}" />
+        </Grid>
 
+        <CollectionView Grid.Row="3" x:Name="ProjekterListe">
             <CollectionView.EmptyView>
-                <Label Text="Der er ingen projekter endnu." />
+                <Label Text="Der er ingen projekter endnu."
+                       Padding="15"
+                       TextColor="#555555" />
             </CollectionView.EmptyView>
 
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Grid ColumnDefinitions="0.8*, 2.2*, 1.5*, 1.2*, 1.2*"
+                              Padding="15,12"
+                              VerticalOptions="Center">
+                            <Label Grid.Column="0" Text="{Binding ProjektID}" VerticalOptions="Center" />
+                            <Label Grid.Column="1" Text="{Binding Adresse}" FontAttributes="Bold" VerticalOptions="Center" />
+                            <Label Grid.Column="2" Text="{Binding Status}" VerticalOptions="Center" />
+                            <Label Grid.Column="3" Text="{Binding ForventetVarighedTimer, StringFormat='{0} timer'}" VerticalOptions="Center" />
+                            <Label Grid.Column="4" Text="{Binding KvadratmeterAfTag, StringFormat='{0} m²'}" VerticalOptions="Center" TextColor="#555555" />
+                        </Grid>
+                        <BoxView HeightRequest="1" Color="#E6E2DD" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
         </CollectionView>
-
     </Grid>
 
-</ContentPage>
+</ContentView>

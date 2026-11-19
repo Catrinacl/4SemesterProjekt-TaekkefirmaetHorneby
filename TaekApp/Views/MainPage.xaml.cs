@@ -229,7 +229,16 @@ namespace TaekApp.Views
 
         private async void OnProjekterOversigtClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ProjekterPage());
+            KalenderContainer.IsVisible = false;
+            IndholdsContainer.IsVisible = true;
+            IndholdsContainer.Content = new ProjekterPage();
+
+            btnOpretProjekt.IsVisible = true;
+            btnOpretDagsprojekt.IsVisible = true;
+            btnOpretArbejdsopgave.IsVisible = true;
+            btnOpretMedarbejder.IsVisible = false;
+            
+            btnOpretKunde.IsVisible = false;
         }
 
         private void OnOversigtskalenderClicked(object sender, EventArgs e)
