@@ -3,50 +3,99 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="TaekApp.Views.OpretDagsprojektPage"
-    Title="Opret dagsprojekt">
+    Title="Opret dagsprojekt"
+    BackgroundColor="{StaticResource HornebyBeigeBg}">
 
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="15">
+        <Border BackgroundColor="White"
+                Stroke="{StaticResource HornebyOliveGreen}"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 12"
+                Padding="32"
+                Margin="24"
+                MaximumWidthRequest="720"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start">
 
-            <Label
-                Text="Opret dagsprojekt"
-                FontSize="28"
-                FontAttributes="Bold" />
+            <VerticalStackLayout Spacing="18">
 
-            <Label Text="Adresse" />
-            <Entry
-                x:Name="AdresseEntry"
-                Placeholder="Indtast projektets adresse" />
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="Opret nyt dagsprojekt"
+                        FontSize="22"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource HornebyDarkText}" />
+                    <Label Text="Udfyld data"
+                        FontSize="13"
+                        TextColor="{StaticResource HornebyDarkText}" />
+                </VerticalStackLayout>
 
-            <Label Text="Status" />
-            <Entry
-                x:Name="StatusEntry"
-                Text="Fremtidigt projekt"
-                Placeholder="Indtast status" />
+                <BoxView HeightRequest="1" Color="#E6E2DD" />
 
-            <Label Text="Forventet varighed i timer" />
-            <Entry
-                x:Name="VarighedEntry"
-                Placeholder="Indtast antal timer"
-                Keyboard="Numeric" />
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Adresse" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />
+                    <Entry x:Name="AdresseEntry"
+                           Placeholder="Indtast projektets adresse"
+                           BackgroundColor="#FAF9F6"
+                           TextColor="#4A4946" />
+                </VerticalStackLayout>
 
-            <Label Text="Tagareal i m²" />
-            <Entry
-                x:Name="TagarealEntry"
-                Placeholder="Indtast tagareal"
-                Keyboard="Numeric" />
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Status" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />
+                    <Entry x:Name="StatusEntry"
+                           Text="Fremtidigt projekt"
+                           Placeholder="Indtast status"
+                           BackgroundColor="#FAF9F6"
+                           TextColor="#4A4946" />
+                </VerticalStackLayout>
 
-            <Label Text="Startdato" />
-            <DatePicker x:Name="StartdatoPicker" />
+                <Grid ColumnDefinitions="*, *" ColumnSpacing="20">
+                    <VerticalStackLayout Grid.Column="0" Spacing="6">
+                        <Label Text="Forventet varighed (timer)" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />
+                        <Entry x:Name="VarighedEntry"
+                               Placeholder="Antal timer"
+                               Keyboard="Numeric"
+                               BackgroundColor="#FAF9F6"
+                               TextColor="#4A4946" />
+                    </VerticalStackLayout>
 
-            <Label Text="Slutdato" />
-            <DatePicker x:Name="SlutdatoPicker" />
+                    <VerticalStackLayout Grid.Column="1" Spacing="6">
+                        <Label Text="Tagareal (m²)" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />
+                        <Entry x:Name="TagarealEntry"
+                               Placeholder="Antal m²"
+                               Keyboard="Numeric"
+                               BackgroundColor="#FAF9F6"
+                               TextColor="#4A4946" />
+                    </VerticalStackLayout>
+                </Grid>
+                <Grid ColumnDefinitions="*, *" ColumnSpacing="20">
+                    <VerticalStackLayout Grid.Column="0" Spacing="6">
+                        <Label Text="Startdato" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />
+                        <DatePicker x:Name="StartdatoPicker"
+                                    BackgroundColor="#FAF9F6"
+                                    TextColor="#4A4946" />
+                    </VerticalStackLayout>
 
-            <Button
-                Text="Opret dagsprojekt"
-                Clicked="OnOpretDagsprojektClicked" />
+                    <VerticalStackLayout Grid.Column="1" Spacing="6">
+                        <Label Text="Slutdato" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />
+                        <DatePicker x:Name="SlutdatoPicker"
+                                    BackgroundColor="#FAF9F6"
+                                    TextColor="#4A4946" />
+                    </VerticalStackLayout>
+                </Grid>
 
-        </VerticalStackLayout>
+                <BoxView HeightRequest="1" Color="#E6E2DD" Margin="0,6,0,0" />
+
+                <HorizontalStackLayout HorizontalOptions="End" Spacing="12">
+                    <Button Clicked="OnOpretDagsprojektClicked"
+                            Text="Opret dagsprojekt"
+                            BackgroundColor="{StaticResource HornebyOliveGreen}"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="8"
+                            HeightRequest="42"
+                            WidthRequest="180" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Border>
     </ScrollView>
-
 </ContentPage>
