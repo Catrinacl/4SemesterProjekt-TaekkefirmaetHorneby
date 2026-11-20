@@ -17,6 +17,6 @@ namespace DataAccess.Mappers
             return new Medarbejder (medarbejder.ID, medarbejder.Navn, medarbejder.Admin,
                 medarbejder.Telefonnr, medarbejder.Mail, medarbejder.Lærling);
         }
-        //TODO mangler DTO
+        
     }
 }
