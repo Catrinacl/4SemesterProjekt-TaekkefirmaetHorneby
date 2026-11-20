@@ -304,6 +304,10 @@ namespace TaekApp.Views
             {
                 medarbejderPage.OpdaterListe();
             }
+            else if (IndholdsContainer.Content is KunderPage kunderPage)
+            {
+                kunderPage.OpdaterListe();
+            }
         }
     }
 }
