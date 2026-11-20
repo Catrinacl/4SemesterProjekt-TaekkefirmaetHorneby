@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TaekApp.Views.OpretKundePage"
+    Title="Opret kunde"
+    BackgroundColor="{StaticResource HornebyBeigeBg}">
+
+    <ScrollView>
+        <Border
+            BackgroundColor="White"
+            Stroke="{StaticResource HornebyOliveGreen}"
+            StrokeThickness="1"
+            StrokeShape="RoundRectangle 12"
+            Padding="32"
+            Margin="24"
+            MaximumWidthRequest="720"
+            HorizontalOptions="Fill"
+            VerticalOptions="Start">
+
+            <VerticalStackLayout Spacing="18">
+
+                <VerticalStackLayout Spacing="4">
+                    <Label
+                        Text="Opret ny kunde"
+                        FontSize="22"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource HornebyDarkText}" />
+
+                    <Label
+                        Text="Udfyld kundens oplysninger"
+                        FontSize="13"
+                        TextColor="{StaticResource HornebyDarkText}" />
+                </VerticalStackLayout>
+
+                <BoxView HeightRequest="1" Color="#E6E2DD" />
+
+                <VerticalStackLayout Spacing="6">
+                    <Label
+                        Text="Navn"
+                        FontAttributes="Bold"
+                        FontSize="13"
+                        TextColor="#4A4946" />
+
+                    <Entry
+                        x:Name="NavnEntry"
+                        Placeholder="Indtast kundens navn"
+                        BackgroundColor="#FAF9F6"
+                        TextColor="#4A4946" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="6">
+                    <Label
+                        Text="Adresse"
+                        FontAttributes="Bold"
+                        FontSize="13"
+                        TextColor="#4A4946" />
+
+                    <Entry
+                        x:Name="AdresseEntry"
+                        Placeholder="Indtast kundens adresse"
+                        BackgroundColor="#FAF9F6"
+                        TextColor="#4A4946" />
+                </VerticalStackLayout>
+
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="20">
+
+                    <VerticalStackLayout Grid.Column="0" Spacing="6">
+                        <Label
+                            Text="Telefonnummer"
+                            FontAttributes="Bold"
+                            FontSize="13"
+                            TextColor="#4A4946" />
+
+                        <Entry
+                            x:Name="TelefonEntry"
+                            Placeholder="Indtast telefonnummer"
+                            Keyboard="Telephone"
+                            BackgroundColor="#FAF9F6"
+                            TextColor="#4A4946" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Column="1" Spacing="6">
+                        <Label
+                            Text="Mail"
+                            FontAttributes="Bold"
+                            FontSize="13"
+                            TextColor="#4A4946" />
+
+                        <Entry
+                            x:Name="MailEntry"
+                            Placeholder="Indtast mailadresse"
+                            Keyboard="Email"
+                            BackgroundColor="#FAF9F6"
+                            TextColor="#4A4946" />
+                    </VerticalStackLayout>
+
+                </Grid>
+
+                <BoxView
+                    HeightRequest="1"
+                    Color="#E6E2DD"
+                    Margin="0,6,0,0" />
+
+                <HorizontalStackLayout HorizontalOptions="End">
+                    <Button
+                        Text="Opret kunde"
+                        Clicked="OnOpretKundeClicked"
+                        BackgroundColor="{StaticResource HornebyOliveGreen}"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="8"
+                        HeightRequest="42"
+                        WidthRequest="180" />
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+        </Border>
+    </ScrollView>
+
+</ContentPage>

@@ -95,6 +95,9 @@
 	  <MauiXaml Update="Views\OpretArbejdsopgavePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\OpretKundePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\OpretMedarbejderPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

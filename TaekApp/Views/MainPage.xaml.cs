@@ -287,7 +287,7 @@ namespace TaekApp.Views
         
         private async void OnOpretKundeClicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new OpretKundePage());
+            await Navigation.PushAsync(new OpretKundePage());
         }   
         
 
