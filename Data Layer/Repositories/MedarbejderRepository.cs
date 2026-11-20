@@ -10,21 +10,17 @@ namespace DataAccess.Repositories
     {
         public List<Medarbejder> GetAlleMedarbejdere()
         {
-            using (var context = new ProjektContext())
-            {
-                return context.Medarbejdere.ToList();
-            }
+            using var context = new ProjektContext();
+            return context.Medarbejdere.ToList();
 
         }
 
 
         public void OpretMedarbejder(Medarbejder medarbejder)
         {
-            using (var context = new ProjektContext())
-            {
-                context.Medarbejdere.Add(medarbejder);
-                context.SaveChanges();
-            }
+            using var context = new ProjektContext();
+            context.Medarbejdere.Add(medarbejder);
+            context.SaveChanges();
         }
 
 

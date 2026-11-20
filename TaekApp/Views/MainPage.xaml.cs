@@ -296,6 +296,14 @@ namespace TaekApp.Views
             await Navigation.PushAsync(new OpretMedarbejderPage());
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
 
+            if (IndholdsContainer.Content is MedarbejderPage medarbejderPage)
+            {
+                medarbejderPage.OpdaterListe();
+            }
+        }
     }
 }

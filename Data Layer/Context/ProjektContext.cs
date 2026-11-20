@@ -22,18 +22,22 @@ namespace DataAccess.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
-            //Info skal udskiftes med brugerens egne oplysninger, for at kunne køre programmet.
-            //Tænker ikke det er sådan vi skal gøre det i sidste ende, men for nu er det en hurtig løsning.
             optionsBuilder.UseSqlServer(
-                "Data Source=SimPC\\SQLEXPRESS;" +
-                "Initial Catalog=ProjektDatabase;" +
-                "User ID=DIT_BRUGERNAVN;" +
-                "Password=DIT_PASSWORD;" +
-                "TrustServerCertificate=True");
+            "Server=tcp:horneby-sql-server.database.windows.net,1433;" +
+            "Initial Catalog=HornebyDatabase;" +
+            "Persist Security Info=False;" +
+            "User ID=hornebyadmin;" +
+            "Password=123horneby123!;" +
+            "MultipleActiveResultSets=False;" +
+            "Encrypt=True;" +
+            "TrustServerCertificate=False;" +
+            "Connection Timeout=60;",
+            options => options.EnableRetryOnFailure(
+                maxRetryCount: 5,
+                maxRetryDelay: TimeSpan.FromSeconds(15),
+                errorNumbersToAdd: null));
 
-            optionsBuilder.LogTo(message =>
-                Debug.WriteLine(message));
+            optionsBuilder.LogTo(message => Debug.WriteLine(message));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

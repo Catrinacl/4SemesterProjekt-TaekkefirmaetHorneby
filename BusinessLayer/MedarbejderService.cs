@@ -31,7 +31,6 @@ namespace BusinessLogic
         {
             Medarbejder medarbejder = new Medarbejder
             {
-                ID = medarbejderDTO.ID,
                 Navn = medarbejderDTO.Navn,
                 Admin = medarbejderDTO.Admin,
                 Telefonnr = medarbejderDTO.Telefonnr,
