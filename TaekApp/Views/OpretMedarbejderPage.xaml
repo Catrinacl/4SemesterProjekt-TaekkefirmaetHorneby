@@ -31,14 +31,6 @@
                 <BoxView HeightRequest="1" Color="#E6E2DD" />
 
                 <Grid ColumnDefinitions="*, *" ColumnSpacing="20">
-                    <VerticalStackLayout Grid.Column="0" Spacing="6">
-                        <Label Text="ID" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />
-                        <Entry x:Name="idIndtast"
-                               Placeholder="Fx. 101"
-                               Keyboard="Numeric"
-                               BackgroundColor="#FAF9F6"
-                               TextColor="#4A4946" />
-                    </VerticalStackLayout>
 
                     <VerticalStackLayout Grid.Column="1" Spacing="6">
                         <Label Text="Navn på medarbejder" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />

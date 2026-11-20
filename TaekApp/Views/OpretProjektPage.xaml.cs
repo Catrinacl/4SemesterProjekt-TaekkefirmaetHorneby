@@ -1,3 +1,4 @@
+using BusinessLogic;
 using DTO;
 
 namespace TaekApp.Views;
@@ -5,10 +6,11 @@ namespace TaekApp.Views;
 public partial class OpretProjektPage : ContentPage
 {
     public static List<ProjektDTO> projektList = new List<ProjektDTO>();
+    private readonly MedarbejderService _medarbejderService = new();
     public OpretProjektPage()
 	{
 		InitializeComponent();
-        MedListe.ItemsSource = OpretMedarbejderPage.medarbejderList;
+        MedListe.ItemsSource = _medarbejderService.GetAlleMedarbejdere();
         MedListe.ItemDisplayBinding = new Binding("Navn");
     }
 
