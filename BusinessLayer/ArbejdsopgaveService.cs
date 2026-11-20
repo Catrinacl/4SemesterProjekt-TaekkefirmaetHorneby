@@ -1,29 +1,40 @@
-﻿using DataAccess.Model;
+﻿
+using System.Collections.Generic;
+using System.Linq;
+using DataAccess.Model;
 using DataAccess.Repositories;
 using DTO;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BusinessLogic
 {
     public class ArbejdsopgaveService
     {
-        /*
-        public string Name { get; set; } = string.Empty;
-        public string Description { get; set; } = string.Empty;
-        public string Status { get; set; } = string.Empty;
-        public int Priority { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-         */
+        private readonly ArbejdsopgaveRepository _repository =
+            new ArbejdsopgaveRepository();
 
-        private readonly ProjektRepository _projektRepository = new ProjektRepository();
-        public void OpretNyArbejdsopgave(OpretArbejdsopgaveDTO nyArbejdsopgaveFraUI)
+        
+        public List<OpretArbejdsopgaveDTO> GetAlleArbejdsopgaver()
+        {
+            List<Arbejdsopgave> arbejdsopgaver =
+                _repository.GetAlleArbejdsopgaver();
+
+            return arbejdsopgaver.Select(a => new OpretArbejdsopgaveDTO
+            {
+                ArbejdsopgaveID = a.ArbejdsopgaveID,
+                Name = a.Name,
+                Description = a.Description,
+                Status = a.Status,
+                Priority = a.Priority,
+                StartDate = a.StartDate,
+                EndDate = a.EndDate
+            }).ToList();
+        }
+
+        
+        public void OpretArbejdsopgave(OpretArbejdsopgaveDTO nyArbejdsopgaveFraUI)
         {
             Arbejdsopgave arbejdsopgave = new Arbejdsopgave
             {
-
                 Name = nyArbejdsopgaveFraUI.Name,
                 Description = nyArbejdsopgaveFraUI.Description,
                 Status = nyArbejdsopgaveFraUI.Status,
@@ -32,8 +43,34 @@ namespace BusinessLogic
                 EndDate = nyArbejdsopgaveFraUI.EndDate
             };
 
-            _projektRepository.GemArbejdsopgave(arbejdsopgave);
-            
+            _repository.GemArbejdsopgave(arbejdsopgave);
+        }
+
+        
+        public void OpdaterArbejdsopgave(OpretArbejdsopgaveDTO opgaveFraUI)
+        {
+            Arbejdsopgave eksisterendeOpgave =
+                _repository.GetArbejdsopgave(opgaveFraUI.ArbejdsopgaveID);
+
+            if (eksisterendeOpgave == null)
+            {
+                return;
+            }
+
+            eksisterendeOpgave.Name = opgaveFraUI.Name;
+            eksisterendeOpgave.Description = opgaveFraUI.Description;
+            eksisterendeOpgave.Status = opgaveFraUI.Status;
+            eksisterendeOpgave.Priority = opgaveFraUI.Priority;
+            eksisterendeOpgave.StartDate = opgaveFraUI.StartDate;
+            eksisterendeOpgave.EndDate = opgaveFraUI.EndDate;
+
+            _repository.OpdaterArbejdsopgave(eksisterendeOpgave);
+        }
+
+    
+        public void SletArbejdsopgave(int id)
+        {
+            _repository.SletArbejdsopgave(id);
         }
     }
 }
