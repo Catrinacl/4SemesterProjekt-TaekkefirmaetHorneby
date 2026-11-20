@@ -2,78 +2,113 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaekApp.Views.OpretProjektPage"
-             Title="Opret Projekt">
-    <VerticalStackLayout>
-        
-        <Label 
-            Text="ProjektID"
-            VerticalOptions="Start" 
-            HorizontalOptions="Start" />
-        <Entry x:Name="projektInput" 
-               Placeholder="Tilføj projektID" 
-               Keyboard="Numeric"
-               WidthRequest="200"/>
+             Title="Opret Projekt"
+             BackgroundColor="{StaticResource HornebyBeigeBg}">
+    <ScrollView>
+        <Border BackgroundColor="White"
+                Stroke="{StaticResource HornebyOliveGreen}"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 12"
+                Padding="32"
+                Margin="24"
+                MaximumWidthRequest="720"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start">
 
-        <Label 
-            Text="KundeID"
-            VerticalOptions="Start"
-            HorizontalOptions="Start" />
-        <Entry x:Name="kundeIdInput" 
-               Placeholder="Tilføj kundeID"
-               Keyboard="Numeric"
-               WidthRequest="200"/>
+            <VerticalStackLayout Spacing="18">
 
-        <Label
-            Text="Medarbejdere"
-            VerticalOptions="Start" 
-            HorizontalOptions="Start" />
-        <Picker x:Name="MedListe"
-                BackgroundColor="SlateGray"
-                WidthRequest="200"
-                FontSize="18"/>
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="Opret nyt projekt"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource HornebyDarkText}" />
+                    <Label Text="Udfyld data"
+                           FontSize="13"
+                           TextColor="{StaticResource HornebyDarkText}" />
+                </VerticalStackLayout>
 
-        <Label
-            Text="Adresse"
-            VerticalOptions="Start"
-            HorizontalOptions="Start" />
-        <Entry x:Name="adresseInput" 
-               Placeholder="Tilføj adresse"
-               WidthRequest="200" />
-        
-         <Label
-            Text="Status"
-            VerticalOptions="Start"
-            HorizontalOptions="Start" />
-          <Entry x:Name="statusInput" 
-                 Placeholder="Tilføj status" 
-                 WidthRequest="200"/>
-            
-         <Label
-            Text="Forventet Varighed Timer"
-            VerticalOptions="Start"
-            HorizontalOptions="Start" />
-          <Entry x:Name="forventetVarighedInput" 
-                 Placeholder="Tilføj varighed Timer"
-                 Keyboard="Numeric"
-                 WidthRequest="200" />
-            
-          <Label
-            Text="Kvadratmeter af tag"
-            VerticalOptions="Start"
-            HorizontalOptions="Start"/>
-            <Entry x:Name="kvadratMeterTagIndput" 
-                   Placeholder="Tilføj varighed Timer"
-                   Keyboard="Numeric" 
-                   WidthRequest="200" />
-            
-            
-        <Button
-            Clicked="Button_Clicked"
-            Text="Opret projekt"
-            VerticalOptions="Start"
-            HorizontalOptions="Start"
-            WidthRequest="200" /> 
-            
-    </VerticalStackLayout>
-    
+                <BoxView HeightRequest="1" Color="#E6E2DD" />
+
+                <Grid ColumnDefinitions="*, *" ColumnSpacing="20">
+                    <VerticalStackLayout Grid.Column="0" Spacing="6">
+                        <Label Text="ProjektID" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />
+                        <Entry x:Name="projektInput"
+                               Placeholder="Fx. 1001"
+                               Keyboard="Numeric"
+                               BackgroundColor="#FAF9F6"
+                               TextColor="#4A4946" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Column="1" Spacing="6">
+                        <Label Text="KundeID" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />
+                        <Entry x:Name="kundeIdInput"
+                               Placeholder="Fx. 42"
+                               Keyboard="Numeric"
+                               BackgroundColor="#FAF9F6"
+                               TextColor="#4A4946" />
+                    </VerticalStackLayout>
+                </Grid>
+
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Adresse" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />
+                    <Entry x:Name="adresseInput"
+                           Placeholder="Indtast projektets adresse"
+                           BackgroundColor="#FAF9F6"
+                           TextColor="#4A4946" />
+                </VerticalStackLayout>
+
+                <Grid ColumnDefinitions="*, *" ColumnSpacing="20">
+                    <VerticalStackLayout Grid.Column="0" Spacing="6">
+                        <Label Text="Vælg medarbejder" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />
+                        <Picker x:Name="MedListe"
+                                BackgroundColor="#FAF9F6"
+                                TextColor="#4A4946" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Column="1" Spacing="6">
+                        <Label Text="Status" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />
+                        <Entry x:Name="statusInput"
+                               Placeholder="Fx. Planlagt eller Igangværende"
+                               BackgroundColor="#FAF9F6"
+                               TextColor="#4A4946"/>
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Grid ColumnDefinitions="*, *" ColumnSpacing="20">
+                    <VerticalStackLayout Grid.Column="0" Spacing="6">
+                        <Label Text="Forventet varighed (timer)" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />
+                        <Entry x:Name="forventetVarighedInput"
+                               Placeholder="Antal timer"
+                               Keyboard="Numeric"
+                               BackgroundColor="#FAF9F6"
+                               TextColor="#4A4946" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Column="1" Spacing="6">
+                        <Label Text="Kvadratmeter af tag (m²)" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />
+                        <Entry x:Name="kvadratMeterTagIndput"
+                               Placeholder="Antal m²"
+                               Keyboard="Numeric"
+                               BackgroundColor="#FAF9F6"
+                               TextColor="#4A4946" />
+                    </VerticalStackLayout>
+                </Grid>
+
+                <BoxView HeightRequest="1" Color="#E6E2DD" Margin="0,6,0,0" />
+
+                <HorizontalStackLayout HorizontalOptions="End" Spacing="12">
+                    <Button Clicked="Button_Clicked"
+                            Text="Opret projekt"
+                            BackgroundColor="{StaticResource HornebyOliveGreen}"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="8"
+                            HeightRequest="42"
+                            WidthRequest="180"/>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+        </Border>
+    </ScrollView>
+
 </ContentPage>

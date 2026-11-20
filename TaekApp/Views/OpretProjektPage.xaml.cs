@@ -8,31 +8,35 @@ public partial class OpretProjektPage : ContentPage
     public OpretProjektPage()
 	{
 		InitializeComponent();
-	}
+        MedListe.ItemsSource = OpretMedarbejderPage.medarbejderList;
+        MedListe.ItemDisplayBinding = new Binding("Navn");
+    }
 
     private async void Button_Clicked(object sender, EventArgs e)
     {
-		int projektID = int.Parse(projektInput.Text);
-		int kundeID = int.Parse(kundeIdInput.Text);
-		var medarbejdernavne = OpretMedarbejderPage.medarbejderList.Select(m => m.Navn).ToList();
-        string adresse = adresseInput.Text;
-		string status = statusInput.Text;
-		int forventetVarighedTimer = int.Parse(forventetVarighedInput.Text);
-		double kvadratMeterAfTag = int.Parse(kvadratMeterTagIndput.Text);
+		int.TryParse(projektInput.Text, out int projektID);
+		int.TryParse(kundeIdInput.Text, out int kundeID);
+		int.TryParse(forventetVarighedInput.Text, out int forventetVarighedTimer);
+		double.TryParse(kvadratMeterTagIndput.Text, out double kvadratMeterAfTag);
+        
+		var valgteMedarbejdere = new List<String>();
+        if (MedListe.SelectedItem is MedarbejderDTO valgtMedarbejder)
+        {
+            valgteMedarbejdere.Add(valgtMedarbejder.Navn);
+        }
 
-
-		var opretNytProjekt = new ProjektDTO
+        var opretNytProjekt = new ProjektDTO
 		{
 			ProjektID = projektID,
 			KundeID = kundeID,
-			MedarbejderNavne = medarbejdernavne,
-			Adresse = adresse,
-			Status = status,
+			MedarbejderNavne = valgteMedarbejdere,
+			Adresse = adresseInput.Text,
+			Status = statusInput.Text,
 			ForventetVarighedTimer = forventetVarighedTimer,
 			KvadratmeterAfTag = kvadratMeterAfTag
 		};
 		projektList.Add(opretNytProjekt);
-        await Navigation.PushAsync(new OpretProjektPage());
+		await Navigation.PopAsync();
     }
 
 }

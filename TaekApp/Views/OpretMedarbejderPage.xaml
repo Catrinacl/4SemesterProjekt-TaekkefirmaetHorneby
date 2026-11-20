@@ -2,66 +2,130 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaekApp.Views.OpretMedarbejderPage"
-             Title="Opret Medarbejder">
-    <VerticalStackLayout>
+             Title="Opret Medarbejder"
+             BackgroundColor="{StaticResource HornebyBeigeBg}">
 
-        <Label 
-            Text="ID"
-            VerticalOptions="Start" 
-            HorizontalOptions="Start" />
-        <Entry Placeholder="Tilføj ID"
-               x:Name="idIndtast"
-               Keyboard="Numeric"
-               WidthRequest="200"/>
+    <ScrollView>
+        <Border BackgroundColor="White"
+                Stroke="{StaticResource HornebyOliveGreen}"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 12"
+                Padding="32"
+                Margin="24"
+                MaximumWidthRequest="720"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start">
 
-        <Label
-            Text="Navn på medarbejder"
-            VerticalOptions="Start"
-            HorizontalOptions="Start" />
+            <VerticalStackLayout Spacing="18">
 
-        <Entry
-            x:Name="medarbejderIndtast"
-            Placeholder="Tilføj navn på medarbejder"
-            WidthRequest="200" />
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="Opret ny medarbejder"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource HornebyDarkText}" />
+                    <Label Text="Udfyld data"
+                           FontSize="13"
+                           TextColor="{StaticResource HornebyDarkText}" />
+                </VerticalStackLayout>
 
-        <Label 
-            Text="Admin"
-            VerticalOptions="Start" 
-            HorizontalOptions="Start" />
-        <CheckBox IsChecked="False"
-                  WidthRequest="200" />
+                <BoxView HeightRequest="1" Color="#E6E2DD" />
 
-        <Label
-            Text="Telefonnummer"
-            VerticalOptions="Start"
-            HorizontalOptions="Start" />
-        <Entry x:Name="telefonNrIndtast" 
-               Placeholder="Tilføj telefonnummer"
-               WidthRequest="200" />
+                <Grid ColumnDefinitions="*, *" ColumnSpacing="20">
+                    <VerticalStackLayout Grid.Column="0" Spacing="6">
+                        <Label Text="ID" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />
+                        <Entry x:Name="idIndtast"
+                               Placeholder="Fx. 101"
+                               Keyboard="Numeric"
+                               BackgroundColor="#FAF9F6"
+                               TextColor="#4A4946" />
+                    </VerticalStackLayout>
 
-        <Label
-            Text="Mail"
-            VerticalOptions="Start"
-            HorizontalOptions="Start" />
-        <Entry x:Name= "mailIndtast" 
-               Placeholder="Tilføj mail" 
-               WidthRequest="200" />
+                    <VerticalStackLayout Grid.Column="1" Spacing="6">
+                        <Label Text="Navn på medarbejder" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />
+                        <Entry x:Name="medarbejderIndtast"
+                               Placeholder="Indtast fulde navn"
+                               BackgroundColor="#FAF9F6"
+                               TextColor="#4A4946" />
+                    </VerticalStackLayout>
+                </Grid>
 
-        <Label
-            Text="Lærling"
-            VerticalOptions="Start"
-            HorizontalOptions="Start" />
-        <Entry x:Name="isLæring"/>
-        <CheckBox IsChecked="False" 
-                  WidthRequest="200" />
+                <Grid ColumnDefinitions="*, *" ColumnSpacing="20">
+                    <VerticalStackLayout Grid.Column="0" Spacing="6">
+                        <Label Text="Telefonnummer" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />
+                        <Entry x:Name="telefonNrIndtast"
+                               Placeholder="Indtast telefonnummer"
+                               Keyboard="Telephone"
+                               BackgroundColor="#FAF9F6"
+                               TextColor="#4A4946" />
+                    </VerticalStackLayout>
 
-        <Button
-            Text="Opret"
-            Clicked="Button_Clicked"
-            VerticalOptions="Start"
-            HorizontalOptions="Start"
-            WidthRequest="200" />
+                    <VerticalStackLayout Grid.Column="1" Spacing="6">
+                        <Label Text="Mail" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />
+                        <Entry x:Name="mailIndtast"
+                               Placeholder="Indtast e-mailadresse"
+                               Keyboard="Email"
+                               BackgroundColor="#FAF9F6"
+                               TextColor="#4A4946" />
+                    </VerticalStackLayout>
+                </Grid>
 
-    </VerticalStackLayout>
+                <Grid ColumnDefinitions="*, *" ColumnSpacing="20">
+                    <Border Grid.Column="0"
+                            BackgroundColor="#FAF9F6"
+                            Stroke="#E6E2DD"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 8"
+                            Padding="12,8">
+                        <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                            <CheckBox x:Name="adminCheckBox"
+                                      IsChecked="False"
+                                      Color="{StaticResource HornebyOliveGreen}"
+                                      VerticalOptions="Center" />
+                            <Label Text="Administrator"
+                                   FontAttributes="Bold"
+                                   FontSize="13"
+                                   TextColor="#4A4946"
+                                   VerticalOptions="Center" />
+                        </HorizontalStackLayout>
+                    </Border>
+
+                    <Border Grid.Column="1"
+                            BackgroundColor="#FAF9F6"
+                            Stroke="#E6E2DD"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 8"
+                            Padding="12,8">
+                        <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                            <CheckBox x:Name="laerlingCheckBox"
+                                      IsChecked="False"
+                                      Color="{StaticResource HornebyOliveGreen}"
+                                      VerticalOptions="Center" />
+                            <Label Text="Lærling"
+                                   FontAttributes="Bold"
+                                   FontSize="13"
+                                   TextColor="#4A4946"
+                                   VerticalOptions="Center" />
+                        </HorizontalStackLayout>
+                    </Border>
+                </Grid>
+
+                <BoxView HeightRequest="1" Color="#E6E2DD" Margin="0,6,0,0" />
+
+                <HorizontalStackLayout HorizontalOptions="End" Spacing="12">
+                    <Button Clicked="Button_Clicked"
+                            Text="Opret medarbejder"
+                            BackgroundColor="{StaticResource HornebyOliveGreen}"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="8"
+                            HeightRequest="42"
+                            WidthRequest="180" />
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+        </Border>
+    </ScrollView>
     
+
+
 </ContentPage>
