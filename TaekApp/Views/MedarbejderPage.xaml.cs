@@ -14,9 +14,10 @@ public partial class MedarbejderPage : ContentView
         OpdaterListe();
     }
 
-    public void OpdaterListe()
+    public async void OpdaterListe()
     {
+        var medarbejdere = await Task.Run(() => _medarbejderService.GetAlleMedarbejdere());
         collectionViewMedarbejdere.ItemsSource = null;
-        collectionViewMedarbejdere.ItemsSource = _medarbejderService.GetAlleMedarbejdere();
+        collectionViewMedarbejdere.ItemsSource = medarbejdere;
     }
 }

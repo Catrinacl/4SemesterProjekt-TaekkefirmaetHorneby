@@ -11,12 +11,14 @@ namespace DataAccess.Context
     internal class ProjektContext : DbContext
     {
 
+        private static bool _databaseChecked = false;
+
         public ProjektContext()
         {
-            bool created = Database.EnsureCreated();
-            if (created)
+            if (!_databaseChecked)
             {
-                Debug.WriteLine("Database created");
+                Database.EnsureCreated();
+                _databaseChecked = true;
             }
         }
 

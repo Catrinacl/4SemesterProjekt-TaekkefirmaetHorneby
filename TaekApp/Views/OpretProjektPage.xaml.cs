@@ -10,7 +10,13 @@ public partial class OpretProjektPage : ContentPage
     public OpretProjektPage()
 	{
 		InitializeComponent();
-        MedListe.ItemsSource = _medarbejderService.GetAlleMedarbejdere();
+        IndlaesMedarbejdere();
+    }
+
+    private async void IndlaesMedarbejdere()
+    {
+        var medarbejdere = await Task.Run(() => _medarbejderService.GetAlleMedarbejdere());
+        MedListe.ItemsSource = medarbejdere;
         MedListe.ItemDisplayBinding = new Binding("Navn");
     }
 
