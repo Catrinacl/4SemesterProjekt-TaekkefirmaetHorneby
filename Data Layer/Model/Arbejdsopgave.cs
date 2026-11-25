@@ -11,10 +11,12 @@ namespace DataAccess.Model
         public int ArbejdsopgaveID { get; set; }
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-        public string Status { get; set; } = string.Empty;
-        public int Priority { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+
+        public string Unit { get; set; } = string.Empty;
+        public double SvendProductionPerDay { get; set; }
+        public double LaerlingProductionPerDay { get; set; }
+        public bool RequiresManualTime { get; set; }
+
 
         
         // Til Entity Framework

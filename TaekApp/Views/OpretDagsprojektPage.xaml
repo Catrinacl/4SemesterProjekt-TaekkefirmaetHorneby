@@ -31,6 +31,11 @@
 
                 <BoxView HeightRequest="1" Color="#E6E2DD" />
 
+                <Label Text="Vælg kunde" />
+                <Picker
+                    x:Name="KundeListe"
+                    Title="Vælg en kunde" />
+
                 <VerticalStackLayout Spacing="6">
                     <Label Text="Adresse" FontAttributes="Bold" FontSize="13" TextColor="#4A4946" />
                     <Entry x:Name="AdresseEntry"
@@ -82,6 +87,24 @@
                                     TextColor="#4A4946" />
                     </VerticalStackLayout>
                 </Grid>
+
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="Vælg arbejdsopgaver"
+           FontSize="18"
+           FontAttributes="Bold"
+           TextColor="{StaticResource HornebyDarkText}" />
+
+                    <Label Text="Vælg de standardarbejdsopgaver, der skal udføres på projektet."
+           FontSize="13"
+           TextColor="#4A4946" />
+
+                    <VerticalStackLayout x:Name="ArbejdsopgaverContainer"
+                         Spacing="10" />
+
+                </VerticalStackLayout>
+
 
                 <BoxView HeightRequest="1" Color="#E6E2DD" Margin="0,6,0,0" />
 

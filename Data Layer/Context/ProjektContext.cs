@@ -1,24 +1,24 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using DataAccess.Model;
 
 namespace DataAccess.Context
 {
     internal class ProjektContext : DbContext
     {
-
-        private static bool _databaseChecked = false;
-
+        private static bool databaseInitialized = false;
+        private static readonly object databaseLock = new object();
         public ProjektContext()
         {
-            if (!_databaseChecked)
+            lock (databaseLock)
             {
-                Database.EnsureCreated();
-                _databaseChecked = true;
+                if (!databaseInitialized)
+                {
+                    Database.EnsureCreated();
+
+                    databaseInitialized = true;
+                }
             }
         }
 
@@ -44,12 +44,50 @@ namespace DataAccess.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           
-            modelBuilder.Entity<Arbejdsopgave>().HasData(new Arbejdsopgave[] {
-                //TODO skal laves når vi er sikre på modellerne og relationerne mellem dem.
-            });
+
+            modelBuilder.Entity<ProjektArbejdsopgave>()
+                .HasOne(p => p.Arbejdsopgave)
+                .WithMany()
+                .HasForeignKey(p => p.ArbejdsopgaveID)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+            modelBuilder.Entity<ProjektArbejdsopgave>()
+                .HasOne(p => p.DagsProjekt)
+                .WithMany(p => p.Arbejdsopgaver)
+                .HasForeignKey(p => p.DagsProjektID)
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.Cascade);
+
+
+            modelBuilder.Entity<ProjektArbejdsopgave>()
+                .HasOne(p => p.LangtProjekt)
+                .WithMany(p => p.Arbejdsopgaver)
+                .HasForeignKey(p => p.LangtProjektID)
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<DagsProjekt>()
+                .HasMany(p => p.Medarbejdere)
+                .WithMany(m => m.DagsProjekter);
+
+            modelBuilder.Entity<LangtProjekt>()
+                .HasMany(p => p.Medarbejdere)
+                .WithMany(m => m.LangtProjekter);
+
+            modelBuilder.Entity<DagsProjekt>()
+                .HasOne(p => p.Kunde)
+                .WithMany(k => k.DagsProjekter)
+                .HasForeignKey(p => p.Kundenummer)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<LangtProjekt>()
+                .HasOne(p => p.Kunde)
+                .WithMany(k => k.LangtProjekter)
+                .HasForeignKey(p => p.Kundenummer)
+                .OnDelete(DeleteBehavior.Restrict);
         }
-       
+
         public DbSet<LangtProjekt> Langeprojekter { get; set; }
         public DbSet<Arbejdsopgave> Arbejdsopgaver { get; set; }
         public DbSet<DagsProjekt> Dagsprojekter { get; set; }
@@ -57,6 +95,7 @@ namespace DataAccess.Context
         public DbSet<Kunde> Kunder { get; set; }
 
         public DbSet<Medarbejder> Medarbejdere { get; set; }
-        public DbSet<ArbejdsTeam> ArbejdsTeams { get; set; }
+
+        public DbSet<ProjektArbejdsopgave> ProjektArbejdsopgaver { get; set; }
     }
 }

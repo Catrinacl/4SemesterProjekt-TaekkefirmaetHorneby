@@ -12,7 +12,6 @@ namespace BusinessLogic
         private readonly ArbejdsopgaveRepository _repository =
             new ArbejdsopgaveRepository();
 
-        
         public List<OpretArbejdsopgaveDTO> GetAlleArbejdsopgaver()
         {
             List<Arbejdsopgave> arbejdsopgaver =
@@ -23,30 +22,28 @@ namespace BusinessLogic
                 ArbejdsopgaveID = a.ArbejdsopgaveID,
                 Name = a.Name,
                 Description = a.Description,
-                Status = a.Status,
-                Priority = a.Priority,
-                StartDate = a.StartDate,
-                EndDate = a.EndDate
+                Unit = a.Unit,
+                SvendProductionPerDay = a.SvendProductionPerDay,
+                LaerlingProductionPerDay = a.LaerlingProductionPerDay,
+                RequiresManualTime = a.RequiresManualTime
             }).ToList();
         }
 
-        
         public void OpretArbejdsopgave(OpretArbejdsopgaveDTO nyArbejdsopgaveFraUI)
         {
             Arbejdsopgave arbejdsopgave = new Arbejdsopgave
             {
                 Name = nyArbejdsopgaveFraUI.Name,
                 Description = nyArbejdsopgaveFraUI.Description,
-                Status = nyArbejdsopgaveFraUI.Status,
-                Priority = nyArbejdsopgaveFraUI.Priority,
-                StartDate = nyArbejdsopgaveFraUI.StartDate,
-                EndDate = nyArbejdsopgaveFraUI.EndDate
+                Unit = nyArbejdsopgaveFraUI.Unit,
+                SvendProductionPerDay = nyArbejdsopgaveFraUI.SvendProductionPerDay,
+                LaerlingProductionPerDay = nyArbejdsopgaveFraUI.LaerlingProductionPerDay,
+                RequiresManualTime = nyArbejdsopgaveFraUI.RequiresManualTime
             };
 
             _repository.GemArbejdsopgave(arbejdsopgave);
         }
 
-        
         public void OpdaterArbejdsopgave(OpretArbejdsopgaveDTO opgaveFraUI)
         {
             Arbejdsopgave eksisterendeOpgave =
@@ -59,15 +56,14 @@ namespace BusinessLogic
 
             eksisterendeOpgave.Name = opgaveFraUI.Name;
             eksisterendeOpgave.Description = opgaveFraUI.Description;
-            eksisterendeOpgave.Status = opgaveFraUI.Status;
-            eksisterendeOpgave.Priority = opgaveFraUI.Priority;
-            eksisterendeOpgave.StartDate = opgaveFraUI.StartDate;
-            eksisterendeOpgave.EndDate = opgaveFraUI.EndDate;
+            eksisterendeOpgave.Unit = opgaveFraUI.Unit;
+            eksisterendeOpgave.SvendProductionPerDay = opgaveFraUI.SvendProductionPerDay;
+            eksisterendeOpgave.LaerlingProductionPerDay = opgaveFraUI.LaerlingProductionPerDay;
+            eksisterendeOpgave.RequiresManualTime = opgaveFraUI.RequiresManualTime;
 
             _repository.OpdaterArbejdsopgave(eksisterendeOpgave);
         }
 
-    
         public void SletArbejdsopgave(int id)
         {
             _repository.SletArbejdsopgave(id);

@@ -77,6 +77,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\ArbejdsOpgaverPage.xaml.cs">
+	    <DependentUpon>ArbejdsOpgaverPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\OpretArbejdsopgavePage.xaml.cs">
 	    <DependentUpon>OpretArbejdsopgavePage.xaml</DependentUpon>
 	  </Compile>
@@ -92,6 +95,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\ArbejdsOpgaverPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\OpretArbejdsopgavePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
