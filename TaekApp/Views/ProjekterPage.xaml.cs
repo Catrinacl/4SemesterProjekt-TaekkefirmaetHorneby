@@ -1,9 +1,14 @@
+using BusinessLogic;
+using System.Linq;
 using DTO;
 
 namespace TaekApp.Views;
 
 public partial class ProjekterPage : ContentView
 {
+    private readonly DagsprojektService _dagsprojektService =
+    new DagsprojektService();
+
     public ProjekterPage()
     {
         InitializeComponent();
@@ -55,25 +60,19 @@ public partial class ProjekterPage : ContentView
         btnProjekter.BackgroundColor = Color.FromArgb("#A68867");
         btnDagsprojekter.BackgroundColor = Color.FromArgb("#617300");
 
-        ProjekterListe.ItemsSource = new List<ProjektDTO>
+        var dagsprojekter = _dagsprojektService.GetAlleDagsProjekter();
+
+        var visteProjekter = dagsprojekter.Select(p => new ProjektDTO
         {
-            new ProjektDTO
-            {
-                ProjektID = 2001,
-                Adresse = "Vej 4 (Reparation af rygning)",
-                Status = "Planlagt",
-                ForventetVarighedTimer = 8,
-                KvadratmeterAfTag = 25
-            },
-            new ProjektDTO
-            {
-                ProjektID = 2002,
-                Adresse = "Vej 5 (Eftersyn af tag)",
-                Status = "Fremtidigt projekt",
-                ForventetVarighedTimer = 4,
-                KvadratmeterAfTag = 110
-            }
-        };
+            ProjektID = p.ProjektID,
+            Adresse = p.Adress,
+            Status = p.Status,
+            ForventetVarighedTimer = p.ExpectedDurationHours,
+            KvadratmeterAfTag = p.RoofSqrM
+        }).ToList();
+
+        ProjekterListe.ItemsSource = null;
+        ProjekterListe.ItemsSource = visteProjekter;
     }
 
 
