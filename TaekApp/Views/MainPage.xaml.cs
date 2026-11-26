@@ -21,8 +21,8 @@ namespace TaekApp.Views
         private DateTime _currentDate = DateTime.Now;
         private List<CalendarProject> _projects = new();
 
-        private readonly DagsprojektService _dagsprojektService =
-            new DagsprojektService();
+        private readonly DagsprojektService _dagsprojektService = new();
+        private readonly LangtProjektService _langtProjektService = new();
 
         public MainPage()
         {
@@ -31,63 +31,69 @@ namespace TaekApp.Views
             BuildCalendar();
         }
 
-        // Pilene til at klikke en måned tilbage
         private void OnPrevMonthClicked(object sender, EventArgs e)
         {
             _currentDate = _currentDate.AddMonths(-1);
             BuildCalendar();
         }
 
-        // Pilene til at klikke en måned frem
         private void OnNextMonthClicked(object sender, EventArgs e)
         {
             _currentDate = _currentDate.AddMonths(1);
             BuildCalendar();
         }
 
-        // Når man klikker på "I dag"
         private void OnTodayClicked(object sender, EventArgs e)
         {
             _currentDate = DateTime.Now;
             BuildCalendar();
         }
 
-        // Henter dagsprojekter fra databasen
         private void LoadSampleProjects()
         {
             var dagsprojekter = _dagsprojektService.GetAlleDagsProjekter();
+            var langtidsprojekter = _langtProjektService.GetAlleProjekter();
 
-            _projects = dagsprojekter.Select(p => new CalendarProject
+            var dagsprojektKalender = dagsprojekter.Select(p => new CalendarProject
             {
-                Title = p.Adress,
+                Title = $"Dagsprojekt: {p.Adress}",
                 StartDate = p.Startdate,
                 EndDate = p.Endate,
                 BackgroundColor = (Color)Application.Current!.Resources["HornebyOliveGreen"],
                 BorderColor = (Color)Application.Current!.Resources["HornebyThatchBrown"],
                 TextColor = Color.FromArgb("#F0F0F0")
-            }).ToList();
+            });
+
+            var langtidsprojektKalender = langtidsprojekter.Select(p => new CalendarProject
+            {
+                Title = $"Langtidsprojekt: {p.Adresse}",
+                StartDate = p.Startdate,
+                EndDate = p.Endate,
+                BackgroundColor = Color.FromArgb("#A68867"),
+                BorderColor = (Color)Application.Current!.Resources["HornebyThatchBrown"],
+                TextColor = Color.FromArgb("#F0F0F0")
+            });
+
+            _projects = dagsprojektKalender
+                .Concat(langtidsprojektKalender)
+                .ToList();
         }
 
-        // Den her metode bygger og opdaterer kalenderen
         private void BuildCalendar()
         {
-            // Opdaterer overskriften
             var cultureInfo = new CultureInfo("da-DK");
             string monthName = _currentDate.ToString("MMMM yyyy", cultureInfo);
             lblCurrentMonth.Text = char.ToUpper(monthName[0]) + monthName.Substring(1);
 
-            // Rydder det gamle kalendergitter
             CalendarGrid.Children.Clear();
             CalendarGrid.RowDefinitions.Clear();
 
-            // Tilføjer 5 rækker til ugerne
             for (int r = 0; r < 5; r++)
             {
                 CalendarGrid.RowDefinitions.Add(
                     new RowDefinition { Height = GridLength.Star });
             }
 
-            // Finder startdatoen for måneden i kalenderen (mandag)
             DateTime firstOfMonth = new DateTime(
                 _currentDate.Year,
                 _currentDate.Month,
@@ -99,7 +105,6 @@ namespace TaekApp.Views
             DateTime gridStartDate =
                 firstOfMonth.AddDays(-dayOfWeekOffset);
 
-            // Datofelterne (5 rækker x 7 kolonner)
             for (int row = 0; row < 5; row++)
             {
                 for (int col = 0; col < 7; col++)
@@ -140,7 +145,6 @@ namespace TaekApp.Views
                 }
             }
 
-            // Indsætter projekter, der falder i denne månedsvisning
             RenderProjectsForCurrentView(gridStartDate);
         }
 
@@ -148,16 +152,11 @@ namespace TaekApp.Views
         {
             foreach (var project in _projects)
             {
-                // Tjekker hver ugerække for projektets datoer
                 for (int row = 0; row < 5; row++)
                 {
-                    DateTime weekStart =
-                        gridStartDate.AddDays(row * 7);
+                    DateTime weekStart = gridStartDate.AddDays(row * 7);
+                    DateTime weekEnd = weekStart.AddDays(6);
 
-                    DateTime weekEnd =
-                        weekStart.AddDays(6);
-
-                    // Tjekker om projektet overlapper med ugen
                     if (project.StartDate <= weekEnd &&
                         project.EndDate >= weekStart)
                     {
@@ -170,6 +169,9 @@ namespace TaekApp.Views
                             (project.EndDate - weekStart).Days);
 
                         int colSpan = endCol - startCol + 1;
+
+                        if (colSpan <= 0)
+                            continue;
 
                         Border projectBorder = new Border
                         {
@@ -233,7 +235,6 @@ namespace TaekApp.Views
             btnOpretDagsprojekt.IsVisible = true;
             btnOpretArbejdsopgave.IsVisible = true;
             btnOpretMedarbejder.IsVisible = false;
-
             btnOpretKunde.IsVisible = false;
         }
 
@@ -246,11 +247,9 @@ namespace TaekApp.Views
             btnOpretProjekt.IsVisible = true;
             btnOpretDagsprojekt.IsVisible = true;
             btnOpretArbejdsopgave.IsVisible = true;
-
             btnOpretKunde.IsVisible = false;
             btnOpretMedarbejder.IsVisible = false;
 
-            // Henter de nyeste dagsprojekter, når kalenderen åbnes
             LoadSampleProjects();
             BuildCalendar();
         }
@@ -265,7 +264,6 @@ namespace TaekApp.Views
             btnOpretDagsprojekt.IsVisible = false;
             btnOpretArbejdsopgave.IsVisible = false;
             btnOpretKunde.IsVisible = false;
-
             btnOpretMedarbejder.IsVisible = true;
         }
 
@@ -279,7 +277,6 @@ namespace TaekApp.Views
             btnOpretDagsprojekt.IsVisible = false;
             btnOpretArbejdsopgave.IsVisible = false;
             btnOpretMedarbejder.IsVisible = false;
-
             btnOpretKunde.IsVisible = true;
         }
 
@@ -317,6 +314,16 @@ namespace TaekApp.Views
             else if (IndholdsContainer.Content is KunderPage kunderPage)
             {
                 kunderPage.OpdaterListe();
+            }
+            else if (IndholdsContainer.Content is ProjekterPage projekterPage)
+            {
+                projekterPage.OpdaterListe();
+            }
+
+            if (KalenderContainer.IsVisible)
+            {
+                LoadSampleProjects();
+                BuildCalendar();
             }
         }
     }
