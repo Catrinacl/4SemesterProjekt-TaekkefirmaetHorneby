@@ -14,7 +14,6 @@
                 <Button x:Name="btnOpretProjekt" Text="+ Opret Projekt" Clicked="OnOpretProjektClicked" BackgroundColor="{StaticResource HornebyThatchBrown}" TextColor="White" FontAttributes="Bold" />
                 <Button x:Name="btnOpretDagsprojekt" Text="+ Opret Dagsprojekt" Clicked="OnOpretDagsprojektClicked" BackgroundColor="{StaticResource HornebyThatchBrown}" TextColor="White" FontAttributes="Bold" />
                 <Button x:Name="btnOpretArbejdsopgave" Text="+ Opret Arbejdsopgave" Clicked="OnOpretStandardArbejdsopgaveClicked" BackgroundColor="{StaticResource HornebyThatchBrown}" TextColor="White" FontAttributes="Bold" />
-                <Button x:Name="btnArbejdsopgaveOversigt" Text="Arbejdsopgaveoversigt" BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Start" Clicked="OnArbejdsopgaveOversigtClicked" />
 
                     <!-- Skjulte knapper, som kommer frem ved contentView skift -->
                     <Button x:Name="btnOpretKunde" Text="+ Opret Kunde" BackgroundColor="{StaticResource HornebyThatchBrown}" TextColor="White" FontAttributes="Bold" IsVisible="False" Clicked="OnOpretKundeClicked"/>
@@ -27,7 +26,9 @@
                 <Button x:Name="btnMedarbejderoversigt" Text="Medarbejderoversigt" FontAttributes="Bold" BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Start" Clicked="OnMedarbejderoversigtClicked"/>
                 <Button x:Name="btnKundeoversigt" Text="Kundeoversigt" FontAttributes="Bold" BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Start" Clicked="OnKundeoversigtClicked"/>
                 <Button x:Name="btnProjektoversigt" Text="Projektoversigt" FontAttributes="Bold" BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Start" Clicked="OnProjekterOversigtClicked"/>
-            </VerticalStackLayout>
+                <Button x:Name="btnArbejdsopgaveOversigt" Text="Arbejdsopgaveoversigt" FontAttributes="Bold" BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Start" Clicked="OnArbejdsopgaveOversigtClicked" />
+
+                </VerticalStackLayout>
         </Border>
 
         <!-- Kalenderen -->
