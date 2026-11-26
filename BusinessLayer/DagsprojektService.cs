@@ -111,6 +111,19 @@ namespace BusinessLogic
             _repository.OpdaterDagsProjekt(eksisterendeProjekt);
         }
 
+        public ProjektBeregningResultat BeregnForhaandsvisning(
+            List<int> medarbejderIds,
+            List<ValgtArbejdsopgaveDTO> valgteOpgaver,
+            DateTime startdato)
+        {
+            var medarbejdere = HentValgteMedarbejdere(medarbejderIds);
+
+            return BeregnProjekt(
+                valgteOpgaver,
+                medarbejdere,
+                startdato);
+        }
+
         private ProjektBeregningResultat BeregnProjekt(
             List<ValgtArbejdsopgaveDTO> valgteOpgaver,
             List<Medarbejder> medarbejdere,

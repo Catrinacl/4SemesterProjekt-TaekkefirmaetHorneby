@@ -15,7 +15,7 @@ namespace DataAccess.Context
             {
                 if (!databaseInitialized)
                 {
-                    Database.EnsureDeleted();
+                   
                     Database.EnsureCreated();
 
                     databaseInitialized = true;

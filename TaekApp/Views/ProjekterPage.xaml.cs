@@ -1,3 +1,4 @@
+
 using BusinessLogic;
 using System.Linq;
 using DTO;
@@ -6,48 +7,18 @@ namespace TaekApp.Views;
 
 public partial class ProjekterPage : ContentView
 {
-    private readonly DagsprojektService _dagsprojektService =
-    new DagsprojektService();
+    private readonly DagsprojektService _dagsprojektService = new();
+    private readonly LangtProjektService _langtProjektService = new();
 
     public ProjekterPage()
     {
         InitializeComponent();
-        TestDataProjekter();
         VisProjekter();
     }
 
-    private void TestDataProjekter()
+    public void OpdaterListe()
     {
-        if (OpretProjektPage.projektList.Count == 0)
-        {
-            OpretProjektPage.projektList.Add(new ProjektDTO
-            {
-                ProjektID = 1001,
-                KundeID = 1,
-                Adresse = "Vej 1",
-                Status = "Igangværende",
-                ForventetVarighedTimer = 120,
-                KvadratmeterAfTag = 185
-            });
-            OpretProjektPage.projektList.Add(new ProjektDTO
-            {
-                ProjektID = 1002,
-                KundeID = 2,
-                Adresse = "Vej 2",
-                Status = "Planlagt",
-                ForventetVarighedTimer = 80,
-                KvadratmeterAfTag = 130
-            });
-            OpretProjektPage.projektList.Add(new ProjektDTO
-            {
-                ProjektID = 1003,
-                KundeID = 3,
-                Adresse = "Vej 3",
-                Status = "Afsluttet",
-                ForventetVarighedTimer = 160,
-                KvadratmeterAfTag = 240
-            });
-        }
+        VisProjekter();
     }
 
     private void OnProjekterClicked(object sender, EventArgs e)
@@ -75,16 +46,23 @@ public partial class ProjekterPage : ContentView
         ProjekterListe.ItemsSource = visteProjekter;
     }
 
-
-
-
     private void VisProjekter()
     {
         btnProjekter.BackgroundColor = Color.FromArgb("#617300");
         btnDagsprojekter.BackgroundColor = Color.FromArgb("#A68867");
 
+        var langtidsprojekter = _langtProjektService.GetAlleProjekter();
+
+        var visteProjekter = langtidsprojekter.Select(p => new ProjektDTO
+        {
+            ProjektID = p.ProjektID,
+            Adresse = p.Adresse,
+            Status = p.Status,
+            ForventetVarighedTimer = p.ForventetVarighedTimer,
+            KvadratmeterAfTag = p.KvadratmeterAfTag
+        }).ToList();
+
         ProjekterListe.ItemsSource = null;
-        ProjekterListe.ItemsSource = OpretProjektPage.projektList;
+        ProjekterListe.ItemsSource = visteProjekter;
     }
- 
 }
